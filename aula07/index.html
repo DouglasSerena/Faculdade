@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Calculo de imc</title>
+</head>
+<body>
+    <form onsubmit="return calcImc()">
+        <div class="group-inputs">
+            <div class="input-label">
+                <label for="name">Nome</label>
+                <input type="text" id="name">
+            </div>
+        </div>
+        <div class="group-inputs">
+            <div class="input-label">
+                <label for="weight">Peso</label>
+                <input type="text" id="weight">
+            </div>
+            <div class="input-label">
+                <label for="height">Altura</label>
+                <input type="text" id="height">
+            </div>
+        </div>
+        <div class="radio-input">
+            <div>
+                <input type="radio" checked name="sex" id="masc">
+                <label for="masc">Masculino</label>
+            </div>
+            <div>
+                <input type="radio" name="sex" id="femi">
+                <label for="femi">Feminino</label>
+            </div>
+        </div>
+        <input class="button" type="submit" value="Calc">
+        <table class="table table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Altura</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">IMC</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody id="result" class="text-center">
+            </tbody>
+        </table>
+    </form>
+
+    <script src="main.js"></script>
+</body>
+</html>

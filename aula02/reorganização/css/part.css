@@ -1,0 +1,63 @@
+/*corpo*/
+
+.border-partidas {
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+}
+.rodada {
+    display: inline-block;
+    width: 900px;
+
+}
+.text-centro {
+    width: 100px;
+    text-align: center;
+}
+.text-espaco {
+    width: 400px
+}
+.margin-top {
+    margin-top: 25px!important;
+    margin-bottom: 5px;
+}
+.margin-bottom {
+    margin-bottom: 25px!important;
+}
+
+
+/*escrita*/
+
+
+.fonte-partidas p {
+    font-size: 15px;
+    font-weight: 100;
+    margin: 0px;
+    padding: 15px 30px;
+    color: rgb(83, 83, 83);
+}
+.rodada p {
+    font-size: 14px;
+    font-weight: initial!important;
+    color: rgb(29, 29, 29)!important;
+    padding: 10px 40px;
+    background-color: #ebeaeb;
+}
+.partida td {
+    border-bottom: 1px solid #e2e2e2;
+}
+.laranja {
+    color: orange;
+}
+.partida p {
+    font-size: 13px;
+}
+
+/*img*/
+
+.partida img {
+    width: 25px;
+    height: 24px;
+    vertical-align: -7px;
+    padding-right: 20px;
+    padding-left: 25px;
+}
