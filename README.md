@@ -1,3 +1,3 @@
-# Introdução ao desenvolvimento WEB
+# Laboratório de programação
 
-Todos os sites desenvolvido no primeiro semestre da faculdade.
+Todos os programas desenvolvidos na aula de laboratório de programação usando java
