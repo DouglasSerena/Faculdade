@@ -24,9 +24,9 @@ class ClientController
   {
     $response = $this->Client->store($req::$body);
     if ($response) {
-      return $res->redirect('/pw2/admin/client?message=Cliente criado como sucesso.&type=success');
+      return $res->redirect('/ULBRA_FACUDADE/admin/client?message=Cliente criado como sucesso.&type=success');
     }
-    return $res->redirect('/pw2/admin/client/store?message=Ocorreu um erro ao salvar o cliente. Tente novamente.&type=danger');
+    return $res->redirect('/ULBRA_FACUDADE/admin/client/store?message=Ocorreu um erro ao salvar o cliente. Tente novamente.&type=danger');
   }
 
   public function getById(Request $req, Response $res)
@@ -42,17 +42,17 @@ class ClientController
   {
     $response = $this->Client->update($req::$body);
     if ($response) {
-      return $res->redirect('/pw2/admin/client?message=Cliente atualizado como sucesso.&type=success');
+      return $res->redirect('/ULBRA_FACUDADE/admin/client?message=Cliente atualizado como sucesso.&type=success');
     }
-    return $res->redirect('/pw2/admin/client/update/' . $req::$body['id'] . '?message=Ocorreu um erro ao atualizar o cliente. Tente novamente.&type=danger');
+    return $res->redirect('/ULBRA_FACUDADE/admin/client/update/' . $req::$body['id'] . '?message=Ocorreu um erro ao atualizar o cliente. Tente novamente.&type=danger');
   }
 
   public function delete(Request $req, Response $res)
   {
     $response = $this->Client->delete($req::$params['id']);
     if ($response) {
-      return $res->redirect('/pw2/admin/client?message=Cliente deletado como sucesso.&type=primary');
+      return $res->redirect('/ULBRA_FACUDADE/admin/client?message=Cliente deletado como sucesso.&type=primary');
     }
-    return $res->redirect('/pw2/admin/client/update/' . $req::$body['id'] . '?message=Ocorreu um erro ao deletar o cliente. Tente novamente.&type=danger');
+    return $res->redirect('/ULBRA_FACUDADE/admin/client/update/' . $req::$body['id'] . '?message=Ocorreu um erro ao deletar o cliente. Tente novamente.&type=danger');
   }
 }

@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="mt-3 text-center">Atualizar</h1>
-  <form action="/pw2/admin/client/update/<?= $params['id'] ?>" method="POST" class="shadow mt-3 p-4">
+  <form action="/ULBRA_FACUDADE/admin/client/update/<?= $params['id'] ?>" method="POST" class="shadow mt-3 p-4">
     <!-- personal data -->
     <div class="form-row form-group">
       <div class="col-md-3">
@@ -49,10 +49,10 @@
     <input type="hidden" id="address" name="address">
     <input type="hidden" name="id" value="<?= $params['id'] ?>">
     <input class="btn btn-primary" name="update" type="submit" value="Atualizar">
-    <a href="/pw2/client" class="btn btn-danger">Voltar</a>
+    <a href="/ULBRA_FACUDADE/client" class="btn btn-danger">Voltar</a>
   </form>
 </div>
-<script src="/pw2/public/assets/js/services/app.js" type="module"></script>
+<script src="/ULBRA_FACUDADE/public/assets/js/services/app.js" type="module"></script>
 <script>
   const API_STATE = `https://servicodados.ibge.gov.br/api/v1/localidades/estados`;
   const state = document.querySelector('#state');

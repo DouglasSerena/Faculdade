@@ -19,8 +19,8 @@ class ProductController
   {
     $response = $this->Product->create($req::$body);
     if ($response) {
-      return $res->redirect('/pw2/admin/product/create?message=Produto criado como sucesso.&type=success');
+      return $res->redirect('/ULBRA_FACUDADE/admin/product/create?message=Produto criado como sucesso.&type=success');
     }
-    return $res->redirect('/pw2/admin/product/create?message=Ocorreu um erro ao salvar o produto. Tente novamente.&type=danger');
+    return $res->redirect('/ULBRA_FACUDADE/admin/product/create?message=Ocorreu um erro ao salvar o produto. Tente novamente.&type=danger');
   }
 }

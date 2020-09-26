@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="mt-3 text-center">Adicionar um produto</h1>
-  <form action="/pw2/admin/product/create" method="POST" class="shadow mt-3 p-4">
+  <form action="/ULBRA_FACUDADE/admin/product/create" method="POST" class="shadow mt-3 p-4">
     <div class="row">
       <div class="col-md-9">
         <div class="form-group">
@@ -40,7 +40,7 @@
   </form>
 </div>
 <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script>
-<script src="/pw2/public/assets/js/services/app.js" type="module"></script>
+<script src="/ULBRA_FACUDADE/public/assets/js/services/app.js" type="module"></script>
 <script>
   const price = document.querySelector('#price');
   const spotlight = document.querySelector('#spotlight');

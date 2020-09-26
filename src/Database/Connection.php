@@ -10,7 +10,7 @@ class Connection
     {
         if (!isset(self::$conn)) {
             try {
-                self::$conn = new \PDO('mysql:host=localhost;dbname=pw_exemple', 'admin', 'admin123');
+                self::$conn = new \PDO('mysql:host=localhost;dbname=pw_exemple', 'admin', '12345678');
             } catch (\PDOException $err) {
                 die("Erro: <code>" . $err->getMessage() . "<code>");
             }

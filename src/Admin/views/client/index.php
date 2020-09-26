@@ -21,12 +21,12 @@
           <td><?= $client['phone'] ?></td>
           <td><?= $client['address'] ?></td>
           <td>
-            <a href="/pw2/admin/client/delete/<?= $client['idClient'] ?>" class="btn btn-danger rounded-circle">
+            <a href="/ULBRA_FACUDADE/admin/client/delete/<?= $client['idClient'] ?>" class="btn btn-danger rounded-circle">
               <i class="fa fa-trash "></i>
             </a>
           </td>
           <td>
-            <a href="/pw2/admin/client/update/<?= $client['idClient'] ?>" class="btn btn-warning rounded-circle">
+            <a href="/ULBRA_FACUDADE/admin/client/update/<?= $client['idClient'] ?>" class="btn btn-warning rounded-circle">
               <i class="fa fa-edit"></i>
             </a>
           </td>

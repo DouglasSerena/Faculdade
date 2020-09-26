@@ -21,16 +21,16 @@ class UserController
     if ($user['user'] === $req::$body['user']) {
       if ($user['password'] === $req::$body['password']) {
         $req::setSession('logged', array('user' => $req::$body['user'], 'permission' => $user['admin']));
-        return $res->redirect('/pw2/admin?message=Logado com sucesso.&type=success');
+        return $res->redirect('/ULBRA_FACUDADE/admin?message=Logado com sucesso.&type=success');
       }
-      return $res->redirect('/pw2/login?message=Senha diferente do Usuário.&type=danger');
+      return $res->redirect('/ULBRA_FACUDADE/login?message=Senha diferente do Usuário.&type=danger');
     }
-    return $res->redirect('/pw2/login?message=Usuário não encontrado.&type=danger');
+    return $res->redirect('/ULBRA_FACUDADE/login?message=Usuário não encontrado.&type=danger');
   }
 
   public function logout(Request $req, Response $res)
   {
     session_destroy();
-    return $res->redirect('/pw2/');
+    return $res->redirect('/ULBRA_FACUDADE/');
   }
 }

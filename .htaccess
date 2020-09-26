@@ -3,6 +3,6 @@ RewriteEngine ON
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteBase /pw2/
+RewriteBase /ULBRA_FACUDADE/
 
 RewriteRule ^(.*)$ index.php

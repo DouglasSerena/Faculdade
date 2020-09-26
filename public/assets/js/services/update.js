@@ -1,6 +1,6 @@
 import { retrieveAddress } from './retrieveAddress.js';
 
-const API_USER = (id) => `http://localhost/pw2/admin/client/${id}`;
+const API_USER = (id) => `http://localhost/ULBRA_FACUDADE/admin/client/${id}`;
 
 export async function update() {
   const params = window.location.pathname.split('/');
