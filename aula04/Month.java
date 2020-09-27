@@ -1,5 +1,3 @@
-package Aula11;
-
 class Month {
   public static void main(String[] args) {
     System.out.println(getMonthByExtension(random(0, 11), 1));
@@ -13,8 +11,8 @@ class Month {
   }
 
   static String getMonthByExtension(int numberMonth, int codeLanguage) {
-    String[] monthsPT = { "Janeiro", "Fevereiro", "Março", "April", "Maio", "Junho", "Julho", "Agosto", "Setempro",
-        "Outubro", "Novembro", "Desenbro" };
+    String[] monthsPT = { "Janeiro", "Fevereiro", "Março", "April", "Maio", "Junho", "Julho", "Agosto", "Setembro",
+        "Outubro", "Novembro", "Dezembro" };
     String[] monthsEN = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
         "October", "November", "December" };
     switch (codeLanguage) {

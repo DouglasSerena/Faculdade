@@ -1,42 +1,33 @@
-package Aula11;
-
 public class Count {
-  private static int index = 0;
-
   public static void main(String[] args) throws InterruptedException {
+    tell();
+    System.out.print("\n");
+    tell(5);
+    System.out.print("\n");
+    tell(1, 13);
+    System.out.print("\n");
     tell(1, 10, 1);
   }
 
   static void tell() {
-    index = 1;
-    while (index <= 10) {
-      System.out.print(index + " ");
-      index++;
-    }
+    for (int index = 1; index <= 10; index++)
+      System.out.print("|" + index + "|");
   }
 
   static void tell(int end) {
-    index = 1;
-    while (index <= end) {
-      System.out.print(index + " ");
-      index++;
-    }
+    for (int index = 1; index <= end; index++)
+      System.out.print("|" + index + "|");
   }
 
   static void tell(int start, int end) {
-    index = start;
-    while (index <= end) {
-      System.out.print(index + " ");
-      index++;
-    }
+    for (int index = start; index < end; index++)
+      System.out.print("|" + index + "|");
   }
 
   static void tell(int start, int end, long pause) throws InterruptedException {
-    index = start;
-    while (index <= end) {
-      System.out.print(index + " ");
+    for (int index = start; index < end; index++) {
+      System.out.print("|" + index + "|");
       Thread.sleep(pause * 1000);
-      index++;
     }
   }
 }
