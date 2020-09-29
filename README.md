@@ -1,3 +1,3 @@
-# Laboratório de programação
+# Algoritmo de programação
 
-Todos os programas desenvolvidos na aula de laboratório de programação usando java
+Todas as Aula que ocorreu no primeiro semestre usando a linguagem de programação C para desenvolver os algoritmos.
