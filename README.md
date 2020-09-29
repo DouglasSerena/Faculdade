@@ -1,3 +1,3 @@
-# ULBRA_FACUDADE
+# Laboratório de programação
 
-Aula estão separado por banchs
+Todos os programas desenvolvidos na aula de laboratório de programação usando java
