@@ -1,0 +1,98 @@
+body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 560px) {
+  .card-menu {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-menu > div {
+    margin: 0 0 10px !important;
+  }
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 500ms;
+  animation: 500ms messageOpen ease-in-out;
+}
+@keyframes messageOpen {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.messageClose {
+  visibility: hidden !important;
+  animation: 500ms messageClose ease-in-out;
+}
+@keyframes messageClose {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.message p {
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+
+.icons-admin-menu:hover {
+  text-decoration: none;
+}
+
+.icons-admin-menu div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 3px 3px 10px #0003;
+
+  margin-bottom: 10px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+
+  transition: 500ms;
+}
+
+.icons-admin-menu:hover div {
+  box-shadow: none !important;
+}
+
+.icons-admin-menu div img {
+  object-position: center;
+  height: 100px;
+}

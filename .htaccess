@@ -1,0 +1,8 @@
+RewriteEngine ON
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteBase /ULBRA_FACUDADE/
+
+RewriteRule ^(.*)$ index.php
