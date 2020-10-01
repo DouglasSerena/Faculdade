@@ -12,7 +12,7 @@ class UserController
   public function logout()
   {
     session_destroy();
-    header('Location: /pw');
+    header('Location: /ULBRA_FACUDADE');
   }
 
   public function loginAction()
