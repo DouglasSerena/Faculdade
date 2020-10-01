@@ -26,4 +26,4 @@
   <button class="btn btn-primary w-100">Cadastrar</button>
 </form>
 
-<script src="/pw/public/js/upload.js"></script>
+<script src="/ULBRA_FACUDADE/public/js/upload.js"></script>

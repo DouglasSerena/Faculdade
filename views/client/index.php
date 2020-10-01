@@ -15,7 +15,7 @@
           <th><?= $client['idClient'] ?></th>
           <td>
             <?php if (is_file("tmp/uploads/clients/{$client['idClient']}.jpg")) : ?>
-              <img class="img-fluid rounded-circle border" style="width: 75px;height: 50px;" src="<?= "/pw/tmp/uploads/clients/{$client['idClient']}.jpg" ?>" alt="">
+              <img class="img-fluid rounded-circle border" style="width: 75px;height: 50px;" src="<?= "/ULBRA_FACUDADE/tmp/uploads/clients/{$client['idClient']}.jpg" ?>" alt="">
             <?php else : ?>
               <img class="img-fluid rounded-circle border" style="width: 75px;height: 50px;" src="https://mail.katira.com.br/assets/img/sem-imagem-g.png" alt="">
             <?php endif; ?>

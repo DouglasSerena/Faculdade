@@ -39,7 +39,7 @@
 
 
   <footer id="footer" class="bg-dark">
-    <a href="/pw">Voltar</a>
+    <a href="/ULBRA_FACUDADE">Voltar</a>
   </footer>
 
   <script src="../public/js/message.js"></script>

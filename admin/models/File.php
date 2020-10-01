@@ -63,7 +63,7 @@ class FileModel
     return false;
   }
 
-  public function remove(string $name, $path = '/pw/tmp/uploads')
+  public function remove(string $name, $path = '/ULBRA_FACUDADE/tmp/uploads')
   {
     $path_file = "{$path}/{$name}.jpg";
     if (!file_exists($path_file)) return false;

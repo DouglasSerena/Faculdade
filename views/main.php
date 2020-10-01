@@ -36,7 +36,7 @@
 
 
   <footer id="footer" class="bg-dark">
-    <a href="/pw/admin/?control=main&action=index">Area de administração</a>
+    <a href="/ULBRA_FACUDADE/admin/?control=main&action=index">Area de administração</a>
   </footer>
 
   <script src="public/js/message.js"></script>
