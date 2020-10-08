@@ -27,7 +27,7 @@
             <input type="password" class="form-control" name="password" placeholder="Password">
           </div>
           <input class="btn btn-primary" type="submit" name="submit" value="submit">
-          <a class="btn btn-warning" href="/ULBRA_FACUDADE/?control=main&action=index">back</a>
+          <a class="btn btn-warning" href="/ULBRA_FACUDADE/WEB/?control=main&action=index">back</a>
         </form>
       </div>
       <div class="col-md-4"></div>

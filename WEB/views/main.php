@@ -36,7 +36,7 @@
 
 
   <footer id="footer" class="bg-dark">
-    <a href="/ULBRA_FACUDADE/admin/?control=main&action=index">Area de administração</a>
+    <a href="/ULBRA_FACUDADE/WEB/admin/?control=main&action=index">Area de administração</a>
   </footer>
 
   <script src="public/js/message.js"></script>
@@ -57,7 +57,7 @@
     }
 
     <?php if (isset($_GET['message'])) : ?>
-      message(<?= "'{$_REQUEST['message']}', '{$_GET['type']}'"?>);
+      message(<?= "'{$_REQUEST['message']}', '{$_GET['type']}'" ?>);
     <?php endif; ?>
   </script>
 </body>
