@@ -1,0 +1,11 @@
+###
+POST http://localhost/ULBRA_FACUDADE/API?control=client&action=store
+Content-Type: application/json
+
+{
+    "idClient": "47",
+    "name": "Douglas",
+    "phone": "993234701",
+    "email": "douglas111serena@gmail.com",
+    "address": "mane leandro"
+}
