@@ -16,9 +16,8 @@ class Date {
   }
 
   static int deform(String date, int type) {
-    if (!date.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")) {
+    if (!date.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}"))
       return 0;
-    }
     return Integer.parseInt(date.split("/")[type]);
   }
 }

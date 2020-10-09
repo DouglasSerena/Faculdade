@@ -1,56 +1,64 @@
-package AP1.Utils;
+package Utils;
 
 import java.util.Scanner;
 
 public class Console {
-    private Scanner scanner;
-    
-    Console(Scanner scanner) {
-        this.scanner = scanner;
+    public Scanner scanner;
+    public Color color;
+
+    public Console() {
+        this.scanner = new Scanner(System.in);
     }
 
     // PRINT CONSOLE
-    public void log() {
-        System.out.print("Digite um inteiro");
-    }
-    
     public void log(String message) {
-        System.out.print(message);
+        System.out.print(Color.RESET + message);
     }
 
     // MESSAGE DEFAULT
     public String read() {
-        this.log();
-        return this.scanner.read();
+        return this.read("Digite uma String");
     }
+
     public int readInt() {
-        this.log();
-        return this.scanner.readInt();
+        return this.readInt("Digite uma String");
     }
+
     public float readFloat() {
-         this.log();
-        return this.scanner.readFloat();
+        return this.readFloat("Digite uma String");
     }
+
+    public double readDouble() {
+        return this.readDouble("Digite uma String");
+    }
+
     public char readChar() {
-         this.log();
-        return this.scanner.readChar();
+        return this.readChar("Digite uma String");
     }
 
     // MESSAGE PARAMS
     public String read(String message) {
         this.log(message);
-        return this.scanner.read();
+        return this.scanner.nextLine();
     }
+
     public int readInt(String message) {
         this.log(message);
-        return this.scanner.readInt();
+        return this.scanner.nextInt();
     }
+
     public float readFloat(String message) {
-         this.log(message);
-        return this.scanner.readFloat();
+        this.log(message);
+        return this.scanner.nextFloat();
     }
+
+    public double readDouble(String message) {
+        this.log(message);
+        return this.scanner.nextDouble();
+    }
+
     public char readChar(String message) {
-         this.log(message);
-        return this.scanner.readChar();
+        this.log(message);
+        return (this.scanner.nextLine()).charAt(0);
     }
 }

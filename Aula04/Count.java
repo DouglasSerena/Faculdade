@@ -9,22 +9,19 @@ public class Count {
     tell(1, 10, 1);
   }
 
-  static void tell() {
-    for (int index = 1; index <= 10; index++)
-      System.out.print("|" + index + "|");
+  static void tell() throws InterruptedException {
+    tell(1, 10);
   }
 
-  static void tell(int end) {
-    for (int index = 1; index <= end; index++)
-      System.out.print("|" + index + "|");
+  static void tell(int end) throws InterruptedException {
+    tell(1, end);
   }
 
-  static void tell(int start, int end) {
-    for (int index = start; index < end; index++)
-      System.out.print("|" + index + "|");
+  static void tell(int start, int end) throws InterruptedException {
+    tell(start, end, 0);
   }
 
-  static void tell(int start, int end, long pause) throws InterruptedException {
+  static void tell(int start, int end, int pause) throws InterruptedException {
     for (int index = start; index < end; index++) {
       System.out.print("|" + index + "|");
       Thread.sleep(pause * 1000);
