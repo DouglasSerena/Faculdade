@@ -1,0 +1,19 @@
+algoritmo média
+var
+ AP1, AP2, AS, AF, MED: real
+inicio
+ escreva ("digite as notas :")
+ leia (AP1, AP2, AS);
+ MED <- (AP1+AP2+AS);
+ se (MED >= 7) entao
+  escreva ("Aprovado com "+MED);
+ senâo
+  escreva ("Digite nota AF :")
+  leia (AF)
+  se (AF > MED)entao
+   MED = AF
+  se (MED >= 7) entao
+   escreva ("aprovado")
+  senão
+   escreva ("reprovado");
+fimalgoritmo
