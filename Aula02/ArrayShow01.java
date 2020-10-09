@@ -10,7 +10,7 @@ public class ArrayShow01 {
             } else {
                 together = together + datas[i] + " ,";
             }
-        }
+        } 
         System.out.print(together);
     }
 }

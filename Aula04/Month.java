@@ -15,13 +15,15 @@ class Month {
         "Outubro", "Novembro", "Dezembro" };
     String[] monthsEN = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
         "October", "November", "December" };
-    switch (codeLanguage) {
-      case 1:
-        return monthsPT[numberMonth];
-      case 2:
-        return monthsEN[numberMonth];
-      default:
-        return "Error Idioma não configurado.";
-    }
+    if (numberMonth < 0 || numberMonth > 11)
+      switch (codeLanguage) {
+        case 1:
+          return monthsPT[numberMonth];
+        case 2:
+          return monthsEN[numberMonth];
+        default:
+          return "Error Idioma não configurado.";
+      }
+    return "Mes não encontrado.";
   }
 }
