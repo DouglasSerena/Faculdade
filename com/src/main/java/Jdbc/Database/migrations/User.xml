@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE>
+  <NAME>users</NAME>
+  <FIELDS>
+    <FIELD>
+      <NAME>id</NAME>
+      <TYPE>INTEGER</TYPE>
+      <PRIMARYKEY>true</PRIMARYKEY>
+    </FIELD>
+    <FIELD>
+      <NAME>name</NAME>
+      <TYPE>VARCHAR</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+    <FIELD>
+      <NAME>age</NAME>
+      <TYPE>INT</TYPE>
+      <LENGTH>11</LENGTH>
+    </FIELD>
+    <FIELD>
+      <NAME>cpf</NAME>
+      <TYPE>VARCHAR</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+  </FIELDS>
+</TABLE>

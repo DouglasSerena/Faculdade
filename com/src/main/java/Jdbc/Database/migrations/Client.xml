@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE>
+  <NAME>clients</NAME>
+  <FIELDS>
+    <FIELD>
+      <NAME>id</NAME>
+      <TYPE>INTEGER</TYPE>
+      <PRIMARYKEY>true</PRIMARYKEY>
+    </FIELD>
+    <FIELD>
+      <NAME>name</NAME>
+      <TYPE>VARVHAR</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+    <FIELD>
+      <NAME>email</NAME>
+      <TYPE>VARVHAR</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+    <FIELD>
+      <NAME>cpf</NAME>
+      <TYPE>VARVHAR</TYPE>
+      <LENGTH>15</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+    <FIELD>
+      <NAME>phone</NAME>
+      <TYPE>VARVHAR</TYPE>
+      <LENGTH>20</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+  </FIELDS>
+</TABLE>
