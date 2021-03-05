@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TABLE>
+  <NAME>products</NAME>
+  <FIELDS>
+    <FIELD>
+      <NAME>id</NAME>
+      <TYPE>INTEGER</TYPE>
+      <PRIMARYKEY>true</PRIMARYKEY>
+    </FIELD>
+    <FIELD>
+      <NAME>name</NAME>
+      <TYPE>VARVHAR</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+    <FIELD>
+      <NAME>price</NAME>
+      <TYPE>FLOAT</TYPE>
+      <LENGTH>255</LENGTH>
+      <NOTNULL>true</NOTNULL>
+    </FIELD>
+  </FIELDS>
+</TABLE>
