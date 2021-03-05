@@ -1,0 +1,123 @@
+/*imgs*/
+
+.baner {
+    width: 600px;
+    text-align: left!important;
+}
+.baner img{
+    width: 20px;
+    vertical-align: -5px;
+    padding-right: 10px;
+    padding-left: 15px;
+}
+.baner div {
+    padding-left: 18px;
+}
+
+.quadrado {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(77, 77, 255);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.check img{
+    width: 15px;
+}
+.UCP img {
+    width: 13px;
+    vertical-align: -3px;
+    margin-right: 8px;
+}
+
+/*escrita tabela*/
+
+.formatacao tr th {
+    font-size: 15px;
+    font-weight: initial;
+    color: rgb(102, 102, 102);
+    text-align: center;
+    padding-bottom: 5px;
+    width: 50px;
+}
+.formatacao tr td {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 100;
+    padding: 12px 0px;
+}
+
+/*corpo da pagina*/
+
+.height100 {
+    height: 975px;
+}
+.classificacao h2 {
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+.bordar-left {
+    width: 2px;
+    height: 50px;
+    background-color: blue;
+    display: inline-block;
+}
+.pontuacao {
+    padding-left: 50px;
+}
+
+/*footer*/
+
+.footer {
+    width: 855px;
+    border:2px solid #eeeeee;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+    margin: 25px 20px 25px 20px;
+}
+
+/*final da pagina*/
+
+/*escrita classificatorias*/
+
+.clas {
+    width:410px!important;
+    display: inline-block;
+    vertical-align: 45px;
+    padding-left: 25px;
+    font-size: 13px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+.clas h2 {
+    font-size: 15px;
+    width:450px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+
+/*escrita utimas cinco partidas*/
+
+.UCP {  
+    width: 410px!important;
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: 0px;
+}
+
+.UCP p {
+    font-size: 13px;
+    width:450px;
+    display: inline-block;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+.UCP h2 {
+    width:450px;
+    display: inline-block;
+    margin: 0px;
+    font-size: 15px;
+    margin-bottom: 8px;
+}

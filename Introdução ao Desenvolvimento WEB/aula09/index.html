@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- make money -->
+    <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v3.0.0/simple-mask-money.js"></script>
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./animation.css">
+
+    <title>Year and Number</title>
+</head>
+
+<body>
+    <main>
+        <div class="frame">
+            <h1 class="text-white">Idade</h1>
+            <form class="form" onsubmit="return false;">
+                <p class="text-white m-0">Idade Maxima 150 anos</p>
+                <div class="inputs">
+                    <input id="year" class="rounded border mr-1 text-center" type="text" class="w-100" placeholder="YEAR">
+                </div>
+                <button onclick="share()" class="btn btn-info w-50"> Share </button>
+
+                <div id="result"></div>
+            </form>
+        </div>
+    </main>
+    <div class="image"></div>
+    <ul id="years">
+
+    </ul>
+
+    <script src="./main.js"></script>
+
+</body>
+</html>

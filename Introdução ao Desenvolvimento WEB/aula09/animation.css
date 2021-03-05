@@ -1,0 +1,28 @@
+#years li {
+    position: absolute;
+    top: -30%;
+
+    font-size: 33px;
+    font-weight: bold;
+    color: black;
+
+    list-style: none;
+
+    text-align: center;
+
+    animation: move infinite;
+    animation-direction: alternate;
+    animation-delay: 1s;
+}
+
+@keyframes move {
+    from {
+        top: 130%;
+        transform: rotate(0deg);
+        opacity: 0;
+    } to {
+        opacity: 1;
+        top: -30%;
+        transform: rotate(360deg);
+    }
+}
