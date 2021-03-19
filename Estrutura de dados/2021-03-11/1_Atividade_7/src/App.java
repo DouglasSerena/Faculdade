@@ -10,9 +10,9 @@ public class App {
 
         Statistic statistic = new Statistic(random, console);
 
-        statistic.readData();
-        statistic.elementsCenter();
-        statistic.elementsClock();
+        statistic.readDataRandom();
+        statistic.elementsFrequency();
+        System.out.println("\b> Valor centrar: " + statistic.elementsCenter());
         System.out.println("\b> Media dos valore: " + statistic.calcMedia());
 
         console.close();
