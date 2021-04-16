@@ -1,87 +1,34 @@
-import java.util.Scanner;
+import java.util.Random;
 
-import Source.*;
-
-/**
- * Main
- */
 public class Main {
-  static Matrix matrix = new Matrix(45000);
-  static byte[][] matrixTest = new byte[][] { { 1, 1 }, { 1, 0 } };
+    public static void main(String[] args) {
+        int l = 100;
+        byte[][] m = new byte[l][l];
+        byte[][] mp = new byte[][] { { 1, 1 }, { 1, 0 } };
 
-  public static void main(String[] args) {
-    System.out.println("> Programa sendo inciado...");
+        // Random random = new Random();
 
-    Scanner console = new Scanner(System.in);
+        for (int r = 0; r < l; r++)
+            for (int c = 0; c < l; c++)
+                m[r][c] = 0;
 
-    matrix.fillAuto();
-    menu(console);
+        m[90][90] = 1;
+        m[90][91] = 1;
+        m[91][90] = 1;
+        m[91][91] = 0;
 
-    console.close();
+        long nanoTime = System.nanoTime();
+        long nanoTimeFinal = 0;
 
-    System.out.println("\n> Programa encerrado.");
-  }
+        for (int r = 0; r < l; r++)
+            for (int c = 0; c < l; c++)
+                if (m[r][c] == mp[0][0] && m[r][c + 1] == mp[0][1] && m[r + 1][c] == mp[1][0]
+                        && m[r + 1][c + 1] == mp[1][1]) {
+                    nanoTimeFinal = System.nanoTime();
+                    System.out.println("Nano time: " + (nanoTimeFinal - nanoTime));
+                    return;
+                }
 
-  private static void menu(Scanner console) {
-    System.out.print("\nEscolha uma opção\n" + "> 1 - Update matrix\n"
-        + "> 2 - Preencher matrix com 1 com valor default\n" + "> 3 - Gerar nova matrix\n"
-        + "> 4 - Setar matrix teste\n" + "> 5 - Buscar na matrix por todas a ocorrências\n"
-        + "> 6 - Buscar na matrix por uma ocorrências\n" + "> 0 - Sair\n" + "> ");
-    byte option = console.nextByte();
-
-    switch (option) {
-    case 1:
-      Chronometer.clearMedia();
-      matrix.fillAuto();
-      break;
-
-    case 2:
-      Chronometer.clearMedia();
-      matrix.fill(1);
-      matrix.setDefault();
-      break;
-
-    case 3:
-      System.out.print("Qual sera o tamanho da matrix: ");
-      int size = console.nextInt();
-      matrix = new Matrix(size);
-      matrix.fillAuto();
-      break;
-
-    case 4:
-      changeMatrixTest(console);
-      break;
-
-    case 5:
-      System.out.println(matrix.searchDefaultAll(matrixTest));
-      Chronometer.media();
-      break;
-
-    case 6:
-      System.out.println(matrix.searchDefaultFirst(matrixTest));
-      Chronometer.media();
-      break;
+        System.out.println("Não achou");
     }
-
-    if (option != 0) {
-      menu(console);
-    }
-  }
-
-  public static void changeMatrixTest(Scanner console) {
-    System.out.print("Qual sera o tamanho da matrix (maxima: 4): ");
-    int size = console.nextInt();
-
-    if (size <= 4) {
-      matrixTest = new byte[size][size];
-      for (int rows = 0; rows < size; rows++)
-        for (int cols = 0; cols < size; cols++) {
-          System.out.print("Informe o valor para a posição [" + rows + "][" + cols + "] (somente 0 e 1): ");
-          matrixTest[rows][cols] = console.nextByte();
-          if (matrixTest[rows][cols] != 0 || matrixTest[rows][cols] != 1)
-            matrixTest[rows][cols] = 0;
-        }
-    } else
-      System.out.println("Valor informado invalido");
-  }
 }
