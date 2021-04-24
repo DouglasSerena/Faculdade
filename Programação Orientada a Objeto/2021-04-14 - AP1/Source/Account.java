@@ -1,3 +1,5 @@
+package Source;
+
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -5,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Account {
-    static ArrayList<String> CPFSRegister = new ArrayList<>();
-    static ArrayList<String> numbersAccount = new ArrayList<>();
-    static ArrayList<AccountChain> accounts = new ArrayList<>();
+    public static ArrayList<String> CPFSRegister = new ArrayList<>();
+    public static ArrayList<String> numbersAccount = new ArrayList<>();
+    public static ArrayList<AccountChain> accounts = new ArrayList<>();
     protected DecimalFormat formatter = new DecimalFormat("R$ ###,###,###.00");
     protected ArrayList<String> operations = new ArrayList<String>();
 

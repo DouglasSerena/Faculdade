@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
-import Utils.Console;
-import Utils.Validators;
+import Source.*;
+import Source.Utils.*;
 
 public class Main {
     static Console console = new Console();
@@ -106,6 +106,9 @@ public class Main {
                     console.log("\n[ERRO] " + error.getMessage());
                 }
                 break;
+
+            case 0:
+                running = false;
             }
         } while (running);
 
@@ -129,6 +132,8 @@ public class Main {
         if (account.equals(accountSelect)) {
             throw new Exception("Não tem como trocar de conta para a mesma conta selecionada.");
         }
+
+        accountSelect = account;
 
         console.log("\n");
     }

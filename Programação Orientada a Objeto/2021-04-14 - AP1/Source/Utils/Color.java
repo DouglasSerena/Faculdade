@@ -1,4 +1,4 @@
-package Utils;
+package Source.Utils;
 
 public class Color {
     public static String RESET = "\u001B[0m";

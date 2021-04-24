@@ -1,9 +1,11 @@
+package Source;
+
+import Source.Utils.*;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import Utils.Validators;
-
-public abstract class People {
+abstract class People {
     private String CPF;
     private String name; // NOME
     private String birthDay; // DATA DE NASCIMENTO
