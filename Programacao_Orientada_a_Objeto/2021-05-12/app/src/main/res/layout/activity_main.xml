@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
+    android:background="@color/backgroundPrimary"
     tools:context=".MainActivity">
 
     <View
@@ -65,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/form_gasoline_placeholder"
         android:hint="@string/form_gasoline_placeholder"
@@ -98,7 +98,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="24dp"
         android:autofillHints="@string/form_alcohol_placeholder"
         android:hint="@string/form_alcohol_placeholder"
@@ -108,6 +108,7 @@
         android:textColor="@color/primaryTextColor"
         android:textColorHint="@color/primaryLightTextColor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gasoline" />
 
@@ -116,7 +117,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:contentDescription="@string/form_button_description"
         android:text="@string/form_button"
@@ -177,5 +178,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/messageErrorGasoline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/message_invalid_required_description"
+        android:paddingHorizontal="12dp"
+        android:text="@string/message_invalid_required"
+        android:textColor="@color/dangerColor"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gasoline" />
+
+    <TextView
+        android:id="@+id/messageErrorAlcohol"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/message_invalid_required_description"
+        android:paddingHorizontal="12dp"
+        android:text="@string/message_invalid_required"
+        android:textColor="@color/dangerColor"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alcohol" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

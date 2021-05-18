@@ -10,6 +10,8 @@
 
     <color name="secondaryTextColor">#ffffff</color>
 
+    <color name="dangerColor">#f44336</color>
+
     <color name="primaryColorLogo">#062661</color>
     <color name="backgroundPrimary">#ffffff</color>
 </resources>
