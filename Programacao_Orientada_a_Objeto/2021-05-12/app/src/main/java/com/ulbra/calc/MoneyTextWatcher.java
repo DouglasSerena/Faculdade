@@ -8,18 +8,14 @@ import java.lang.ref.WeakReference;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.Objects;
 
 public class MoneyTextWatcher implements TextWatcher {
     private final WeakReference<EditText> editTextWeakReference;
     private final Locale locale;
 
-    public MoneyTextWatcher(EditText editText, Locale locale) {
-        this.editTextWeakReference = new WeakReference<EditText>(editText);
-        this.locale = locale != null ? locale : Locale.getDefault();
-    }
-
     public MoneyTextWatcher(EditText editText) {
-        this.editTextWeakReference = new WeakReference<EditText>(editText);
+        this.editTextWeakReference = new WeakReference<>(editText);
         this.locale = Locale.getDefault();
     }
 
@@ -52,7 +48,7 @@ public class MoneyTextWatcher implements TextWatcher {
     }
 
     public static BigDecimal parseToBigDecimal(String value, Locale locale) {
-        String replaceable = String.format("[%s,.\\s]", NumberFormat.getCurrencyInstance(locale).getCurrency().getSymbol());
+        String replaceable = String.format("[%s,.\\s]", Objects.requireNonNull(NumberFormat.getCurrencyInstance(locale).getCurrency()).getSymbol());
 
         String cleanString = value.replaceAll(replaceable, "");
 

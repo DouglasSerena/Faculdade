@@ -18,6 +18,7 @@
 
     <string name="message_invalid_required_description">Erro message: Value must be informed if it is greater than 0.</string>
     <string name="message_invalid_required">Erro: Value must be informed if it is greater than 0.</string>
+    <string name="message_invalid_required_field_blur">Blurred field error: Valor deve ser informado sendo maior que 0.</string>
     <string name="message_error_calculator">Error: Check that all fields are filled.</string>
 
     <string name="description_calculation">On average, a ratio of 73% or less of the price of ethanol in relation to the price of gasoline, favors the use of alcohol. If for 74% or more, use gasoline. To calculate you must divide the price of ethanol by that of gasoline</string>

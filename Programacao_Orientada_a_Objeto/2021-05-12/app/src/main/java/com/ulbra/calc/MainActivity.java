@@ -3,6 +3,7 @@ package com.ulbra.calc;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,11 +22,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView messageErrorGasoline;
     private TextView messageErrorAlcohol;
 
+    private float scale;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).hide();
+
+        scale = getResources().getDisplayMetrics().density;
 
         inputPriceGasoline = findViewById(R.id.gasoline);
         inputPriceAlcohol = findViewById(R.id.alcohol);
@@ -35,71 +40,60 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSubmit = findViewById(R.id.submit);
 
 
+        inputPriceAlcohol.setOnKeyListener((View v, int keyCode, KeyEvent event) -> {
+            if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                this.calcPrice();
+            }
+            return false;
+        });
         inputPriceAlcohol.addTextChangedListener(new MoneyTextWatcher(inputPriceAlcohol));
         inputPriceAlcohol.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(inputIsEmpty(inputPriceAlcohol)) {
-                    messageErrorAlcohol.setVisibility(View.VISIBLE);
-                } else {
-                    messageErrorAlcohol.setVisibility(View.INVISIBLE);
-                }
+                validInputIsEmpty(inputPriceAlcohol, messageErrorAlcohol);
             }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         inputPriceGasoline.addTextChangedListener(new MoneyTextWatcher(inputPriceGasoline));
         inputPriceGasoline.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if(inputIsEmpty(inputPriceGasoline)) {
-                    messageErrorGasoline.setVisibility(View.VISIBLE);
-                } else {
-                    messageErrorGasoline.setVisibility(View.INVISIBLE);
-                }
+                validInputIsEmpty(inputPriceGasoline, messageErrorGasoline);
             }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
             @Override
-            public void afterTextChanged(Editable s) {}
+            public void afterTextChanged(Editable s) {
+            }
         });
 
-        inputPriceAlcohol.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if(inputIsEmpty(inputPriceAlcohol)) {
-                        messageErrorAlcohol.setVisibility(View.VISIBLE);
-                    } else {
-                        messageErrorAlcohol.setVisibility(View.INVISIBLE);
-                    }
-                }
+        inputPriceAlcohol.setOnFocusChangeListener((View v, boolean hasFocus) -> {
+            if (!hasFocus) {
+                validInputIsEmpty(inputPriceAlcohol, messageErrorAlcohol, getString(R.string.message_invalid_required_field_blur));
             }
         });
-        inputPriceGasoline.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus) {
-                    if(inputIsEmpty(inputPriceGasoline)) {
-                        messageErrorGasoline.setVisibility(View.VISIBLE);
-                    } else {
-                        messageErrorGasoline.setVisibility(View.INVISIBLE);
-                    }
-                }
+        inputPriceGasoline.setOnFocusChangeListener((View v, boolean hasFocus) -> {
+            if (!hasFocus) {
+                validInputIsEmpty(inputPriceGasoline, messageErrorGasoline, getString(R.string.message_invalid_required_field_blur));
             }
         });
 
         buttonSubmit.setOnClickListener(v -> calcPrice());
     }
 
-    public  void calcPrice() {
-        inputPriceAlcohol.clearFocus();
-        inputPriceGasoline.clearFocus();
-
-        if(!inputIsEmpty(inputPriceGasoline) && !inputIsEmpty(inputPriceAlcohol)) {
+    public void calcPrice() {
+        if (!inputIsEmpty(inputPriceGasoline) && !inputIsEmpty(inputPriceAlcohol)) {
             double priceGasoline = Double.parseDouble(
                     MoneyTextWatcher.parseToBigDecimal(
                             inputPriceGasoline.getText().toString()).toString());
@@ -110,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
             double result = priceAlcohol / priceGasoline;
 
-            if(result >= 0.7) {
+            if (result >= 0.7) {
                 viewResult.setText(R.string.better_result_to_use_gasoline);
             } else {
                 viewResult.setText(R.string.better_result_to_use_alcohol);
@@ -122,34 +116,49 @@ public class MainActivity extends AppCompatActivity {
 
             createToast(resultMessage);
         } else {
-            if(inputIsEmpty(inputPriceAlcohol)) {
-                messageErrorAlcohol.setVisibility(View.VISIBLE);
-                inputPriceAlcohol.requestFocus();
-            } else {
-                messageErrorAlcohol.setVisibility(View.INVISIBLE);
-            }
-            if(inputIsEmpty(inputPriceGasoline)) {
-                messageErrorGasoline.setVisibility(View.VISIBLE);
-                inputPriceGasoline.requestFocus();
-            } else {
-                messageErrorGasoline.setVisibility(View.INVISIBLE);
-            }
+            validInputIsEmpty(inputPriceAlcohol, messageErrorAlcohol, null, true);
+            validInputIsEmpty(inputPriceGasoline, messageErrorGasoline, null, true);
+
             String errorMessage = getString(R.string.message_error_calculator);
             createToast(errorMessage);
         }
     }
 
     public void createToast(String message) {
-        Toast toast = Toast.makeText( getApplicationContext(), message, Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG);
         toast.show();
     }
 
     public boolean inputIsEmpty(EditText input) {
-        if(input.getText().toString().length() == 0) {
+        if (input.getText().toString().length() == 0) {
             return true;
         }
         return Double.parseDouble(
                 MoneyTextWatcher.parseToBigDecimal(
                         input.getText().toString()).toString()) == 0;
+    }
+
+    public void validInputIsEmpty(EditText input, TextView messageError) {
+        validInputIsEmpty(input, messageError, null, false);
+    }
+
+    public void validInputIsEmpty(EditText input, TextView messageError, String messageToast) {
+        validInputIsEmpty(input, messageError, messageToast, false);
+    }
+
+    public void validInputIsEmpty(EditText input, TextView messageError, String messageToast, boolean withFocus) {
+        if (inputIsEmpty(input)) {
+            messageError.setVisibility(View.VISIBLE);
+            messageError.setHeight((int) (18 * scale));
+            if (messageToast != null) {
+                createToast(messageToast);
+            }
+            if (withFocus) {
+                input.requestFocus();
+            }
+        } else {
+            messageError.setVisibility(View.INVISIBLE);
+            messageError.setHeight(0);
+        }
     }
 }
