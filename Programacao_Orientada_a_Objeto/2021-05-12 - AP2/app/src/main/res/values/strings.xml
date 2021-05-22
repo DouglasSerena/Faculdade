@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Alcoolina</string>
+    <string name="alt_logo_image">Logo Alcoolina. Álcool ou Gasolina?</string>
+    <string name="label_image">Álcool ou Gasolina?</string>
+
+    <string name="form_gasoline_label">Preço do litro da gasolina</string>
+    <string name="form_gasoline_placeholder">Informe o preço da gasolina</string>
+
+    <string name="form_alcohol_label">Preço do litro do etanol</string>
+    <string name="form_alcohol_placeholder">Informe o preço do etanol</string>
+
+    <string name="form_button">Calcular</string>
+    <string name="form_button_description">Calcular qual o melhor a ser usado gasolina ou etanol</string>
+
+    <string name="result">Resultado</string>
+    <string name="result_description">Resultado do calculo efetuado a cima</string>
+
+    <string name="better_result_to_use_gasoline">Melhor usar gasolina.</string>
+    <string name="better_result_to_use_alcohol">Melhor usar álcool.</string>
+
+    <string name="message_invalid_required_description">Mensagem de Erro: Valor deve ser informado sendo maior que 0.</string>
+    <string name="message_invalid_required">Erro: Valor deve ser informado sendo maior que 0.</string>
+    <string name="message_invalid_required_field_blur">Erro no campo desfocado: Valor deve ser informado sendo maior que 0.</string>
+    <string name="message_error_calculator">Erro: Verifique se todos os campos estão preenchido.</string>
+
+    <string name="description_calculation">Na média, uma relação de 73% ou menos do preço do etanol em relação ao preço da gasolina, favorece o uso do álcool. Se for 74% ou mais, use gasolina. Para calcular você deve dividir o preço do etanol pelo da gasolina</string>
+    <string name="formula_calculation">Exemplo: 4.00 ÷ 5.00 = 0.8</string>
+</resources>
