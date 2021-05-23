@@ -183,6 +183,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@android:mipmap/sym_def_app_icon" />
+        app:srcCompat="@drawable/empresa"
+        tools:srcCompat="@drawable/empresa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
