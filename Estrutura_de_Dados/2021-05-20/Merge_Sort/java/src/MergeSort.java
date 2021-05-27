@@ -2,37 +2,56 @@ package src;
 
 public class MergeSort {
   public static void order(int[] array) {
-    int left = 0;
-    int middle = array.length / 2;
-    int right = array.length;
+    int length = array.length;
 
-    int[] helper = array.clone();
-    
-    int index = left;
-    int indexJ = middle;
-    int indexK = left;
+    if (length < 2) {
+      return;
+    }
 
-    while (index < middle && indexJ < right) {
-      if (helper[index] < helper[indexJ]) {
-        array[indexK] = helper[index];
+    int medLength = length / 2;
+    int arrayLeft[] = new int[medLength];
+    int arrayRight[] = new int[length - medLength];
+
+    for (int index = 0; index < medLength; index++) {
+      arrayLeft[index] = array[index];
+    }
+    for (int index = medLength; index < length; index++) {
+      arrayRight[index - medLength] = array[index];
+    }
+
+    order(arrayLeft);
+    order(arrayRight);
+
+    merge(array, arrayLeft, arrayRight);
+  }
+
+  public static void merge(int[] array, int[] arrayLeft, int[] arrayRight) {
+    int leftLength = arrayLeft.length;
+    int rightLength = arrayRight.length;
+
+    int index = 0;
+    int indexJ = 0;
+    int indexK = 0;
+
+    while (index < leftLength && indexJ < rightLength) {
+      if (arrayLeft[index] <= arrayRight[indexJ]) {
+        array[indexK] = arrayLeft[index];
         index++;
       } else {
-        array[indexK] = helper[indexJ];
+        array[indexK] = arrayRight[indexJ];
         indexJ++;
       }
       indexK++;
     }
-  
-    // se a metade inicial não foi toda consumida, faz o append.
-    while (index < middle) {
-      array[indexK] = helper[index];
+
+    while (index < leftLength) {
+      array[indexK] = arrayLeft[index];
       index++;
       indexK++;
     }
-  
-    // se a metade final não foi toda consumida, faz o append.
-    while (indexJ < right) {
-      array[indexK] = helper[indexJ];
+
+    while (indexJ < rightLength) {
+      array[indexK] = arrayRight[indexJ];
       indexJ++;
       indexK++;
     }
