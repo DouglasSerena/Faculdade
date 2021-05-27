@@ -15,7 +15,7 @@ export function mergeSort(
   let indexJ = middle;
   let indexK = left;
 
-  while (index <= middle && indexJ <= right) {
+  while (index < middle && indexJ < right) {
     if (helper[index] < helper[indexJ]) {
       array[indexK] = helper[index];
       index++;
@@ -27,14 +27,14 @@ export function mergeSort(
   }
 
   // se a metade inicial não foi toda consumida, faz o append.
-  while (index <= middle) {
+  while (index < middle) {
     array[indexK] = helper[index];
     index++;
     indexK++;
   }
 
   // se a metade final não foi toda consumida, faz o append.
-  while (indexJ <= right) {
+  while (indexJ < right) {
     array[indexK] = helper[indexJ];
     indexJ++;
     indexK++;
