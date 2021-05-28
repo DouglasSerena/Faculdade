@@ -1,9 +1,9 @@
-import { mergeSort } from './mergeSort';
+import { mergeSort } from "./mergeSort";
 
-const array = [7, 15, 19, 21, 5, 9, 11, 90];
+const array = [ 15, 12, 67, 7, 15, 19, 21, 12, 55, 5, 9, 11, 90];
 
-console.log('Array antes: ' + array.join(','));
+console.log("Array antes: " + array.join(","));
 
 mergeSort(array);
 
-console.log('Array depois: ' + array.join(','));
+console.log("Array depois: " + array.join(","));

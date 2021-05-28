@@ -1,42 +1,57 @@
-export function mergeSort(
-  array: number[],
-  left?: number,
-  middle?: number,
-  right?: number
-) {
-  left = left || 0;
-  middle = middle || array.length / 2;
-  right = right || array.length;
+export function mergeSort(array: number[]) {
+  let length = array.length;
 
-  // transfere os elementos entre left e right para um array auxiliar.
-  let helper = [...array];
+  if (length < 2) {
+    return;
+  }
 
-  let index = left;
-  let indexJ = middle;
-  let indexK = left;
+  let medLength = length / 2;
+  let arrayLeft = [];
+  let arrayRight = [];
 
-  while (index < middle && indexJ < right) {
-    if (helper[index] < helper[indexJ]) {
-      array[indexK] = helper[index];
+  for (let index = 0; index < medLength; index++) {
+    arrayLeft[index] = array[index];
+  }
+  for (let index = medLength; index < length; index++) {
+    arrayRight[index - medLength] = array[index];
+  }
+
+  mergeSort(arrayLeft);
+  mergeSort(arrayRight);
+
+  return merge(array, arrayLeft, arrayRight);
+}
+
+function merge(array: number[], arrayLeft: number[], arrayRight: number[]) {
+  let leftLength = arrayLeft.length;
+  let rightLength = arrayRight.length;
+
+  let index = 0;
+  let indexJ = 0;
+  let indexK = 0;
+
+  while (index < leftLength && indexJ < rightLength) {
+    if (arrayLeft[index] <= arrayRight[indexJ]) {
+      array[indexK] = arrayLeft[index];
       index++;
     } else {
-      array[indexK] = helper[indexJ];
+      array[indexK] = arrayRight[indexJ];
       indexJ++;
     }
     indexK++;
   }
 
-  // se a metade inicial não foi toda consumida, faz o append.
-  while (index < middle) {
-    array[indexK] = helper[index];
+  while (index < leftLength) {
+    array[indexK] = arrayLeft[index];
     index++;
     indexK++;
   }
 
-  // se a metade final não foi toda consumida, faz o append.
-  while (indexJ < right) {
-    array[indexK] = helper[indexJ];
+  while (indexJ < rightLength) {
+    array[indexK] = arrayRight[indexJ];
     indexJ++;
     indexK++;
   }
+
+  return array;
 }
