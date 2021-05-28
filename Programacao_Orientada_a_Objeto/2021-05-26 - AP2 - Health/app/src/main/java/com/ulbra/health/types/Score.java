@@ -1,6 +1,8 @@
 package com.ulbra.health.types;
 
-public enum Scores {
+import java.util.Objects;
+
+public enum Score {
     AGE(new int[] {1,2,3,4,6,8}),
     SEX(new int[] {1,2,3,4,6,7}),
     WEIGHT(new int[] {0,1,2,3,5,7}),
@@ -12,12 +14,20 @@ public enum Scores {
 
 
     private final int[] ints;
-    Scores(int[] ints) {
+    Score(int[] ints) {
         this.ints = ints;
     }
 
     public int[] scores() {
         return this.ints;
+    }
+
+    public static int getTotalOptions() {
+        return Objects.requireNonNull(getScore(0)).length;
+    }
+
+    public static int getScore(int position, int index) {
+        return Objects.requireNonNull(getScore(position))[index];
     }
 
     public static int[] getScore(int position) {

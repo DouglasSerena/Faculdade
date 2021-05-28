@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        Button btnStart = findViewById(R.id.btnStart);
+        Button btnStart = findViewById(R.id.btnRestart);
 
         btnStart.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), OptionActivity.class);

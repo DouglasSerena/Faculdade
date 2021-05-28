@@ -3,7 +3,9 @@ package com.ulbra.health.parcelables;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class HealthParcelable implements Parcelable {
+import com.ulbra.health.types.Score;
+
+public class ScoreParcelable implements Parcelable {
 //    0 - age;
 //    1 - sex;
 //    2 - weight;
@@ -13,7 +15,30 @@ public class HealthParcelable implements Parcelable {
 //    6 - illnessInFamily;
 //    7 - cholesterol;
     int[] checked = new int[8];
-    int scores = 0;
+    int scoreTotal = 0;
+
+
+
+    public void setChecked(int index, int value) {
+        checked[index] = value;
+        calcScore();
+    }
+
+    public int[] getChecked() {
+        return checked;
+    }
+
+    public int getScoreTotal() {
+        return scoreTotal;
+    }
+
+
+    private void calcScore() {
+        scoreTotal = 0;
+        for(int index =0; index < 8;index++) {
+            scoreTotal += Score.getScore(index, checked[index]);
+        }
+    }
 
     @Override
     public int describeContents() {
@@ -23,31 +48,34 @@ public class HealthParcelable implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeIntArray(this.checked);
-        dest.writeInt(this.scores);
+        dest.writeInt(this.scoreTotal);
     }
 
     public void readFromParcel(Parcel source) {
         this.checked = source.createIntArray();
-        this.scores = source.readInt();
+        this.scoreTotal = source.readInt();
     }
 
-    public HealthParcelable() {
+    public ScoreParcelable() {
+        for(int check : checked) {
+            check = -1;
+        }
     }
 
-    protected HealthParcelable(Parcel in) {
+    protected ScoreParcelable(Parcel in) {
         this.checked = in.createIntArray();
-        this.scores = in.readInt();
+        this.scoreTotal = in.readInt();
     }
 
-    public static final Parcelable.Creator<HealthParcelable> CREATOR = new Parcelable.Creator<HealthParcelable>() {
+    public static final Parcelable.Creator<ScoreParcelable> CREATOR = new Parcelable.Creator<ScoreParcelable>() {
         @Override
-        public HealthParcelable createFromParcel(Parcel source) {
-            return new HealthParcelable(source);
+        public ScoreParcelable createFromParcel(Parcel source) {
+            return new ScoreParcelable(source);
         }
 
         @Override
-        public HealthParcelable[] newArray(int size) {
-            return new HealthParcelable[size];
+        public ScoreParcelable[] newArray(int size) {
+            return new ScoreParcelable[size];
         }
     };
 }
