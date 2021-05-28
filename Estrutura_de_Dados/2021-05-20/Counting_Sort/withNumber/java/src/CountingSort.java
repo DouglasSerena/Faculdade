@@ -11,6 +11,10 @@ public class CountingSort {
       }
     }
 
+    if(size > moreValue) {
+      moreValue = size;
+    }
+
     int[] output = new int[size];
     int[] count = new int[moreValue + 1];
 

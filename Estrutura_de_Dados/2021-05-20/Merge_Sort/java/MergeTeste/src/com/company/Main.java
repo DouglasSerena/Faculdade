@@ -36,8 +36,10 @@ class MergeSort {
             left[i] = arr[i];
         for (int i = mid; i < n; i++)
             right[i - mid] = arr[i];
+
         mergesort(left);
         mergesort(right);
+        
         merge(arr, left, right);
     }
 

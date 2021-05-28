@@ -5,9 +5,12 @@ def counting_sort(array: list[int]):
     for index in range(size):
         if(array[index] > moreValue):
             moreValue = array[index]
+    
+    if(size > moreValue):
+        moreValue = size
 
     output = [0 for _ in range(size)]
-    count = [0 for _ in range(size)]
+    count = [0 for _ in range(moreValue)]
 
     # Entrada array: [1, 4, 1, 2, 7, 5, 2]
     # Saida count:   [0, 2, 2, 0, 1, 1, 0, 1]

@@ -8,6 +8,10 @@ export function countingSort(array: number[]) {
       moreValue = array[index];
     }
   }
+ 
+  if(size > moreValue) {
+    moreValue = size;
+  }
 
   const output = Array.from({ length: size }, (_, i) => 0);
   const count = Array.from({ length: moreValue + 1 }, (_, i) => 0);

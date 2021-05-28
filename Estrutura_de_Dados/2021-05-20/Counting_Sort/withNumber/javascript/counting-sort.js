@@ -1,4 +1,4 @@
-export function countingSort(array) {
+function countingSort(array) {
   const size = array.length;
   let moreValue = 0;
   array = [...array];
@@ -7,6 +7,10 @@ export function countingSort(array) {
     if (array[index] > moreValue) {
       moreValue = array[index];
     }
+  }
+
+  if (size > moreValue) {
+    moreValue = size;
   }
 
   const output = Array.from({ length: size }, (_, i) => 0);
@@ -61,3 +65,5 @@ export function countingSort(array) {
  * // Array de saida
  * [1, 1, 2, 2, 4, 5, 7]
  */
+
+module.exports.countingSort = countingSort;
