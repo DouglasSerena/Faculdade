@@ -11,6 +11,7 @@ public enum Score {
     PRESSURE(new int[] {1,2,3,4,6,8}),
     ILLNESS_IN_FAMILY(new int[] {1,2,3,4,6,7}),
     CHOLESTEROL(new int[] {1,2,3,4,5,7});
+    public static int totalOptionsScore = 8;
 
 
     private final int[] ints;
@@ -20,10 +21,6 @@ public enum Score {
 
     public int[] scores() {
         return this.ints;
-    }
-
-    public static int getTotalOptions() {
-        return Objects.requireNonNull(getScore(0)).length;
     }
 
     public static int getScore(int position, int index) {

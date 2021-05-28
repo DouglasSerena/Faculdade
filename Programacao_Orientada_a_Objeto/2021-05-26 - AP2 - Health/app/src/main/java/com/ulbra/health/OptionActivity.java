@@ -2,14 +2,12 @@ package com.ulbra.health;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.activity.OnBackPressedCallback;
-import androidx.activity.OnBackPressedDispatcherOwner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ulbra.health.parcelables.ScoreParcelable;
@@ -20,9 +18,13 @@ import java.util.Objects;
 public class OptionActivity extends AppCompatActivity {
     int indexOptionCurrent = 0;
     RadioGroup radioGroupOptions;
+
     TextView textLabel;
     TextView textScoreTotal;
     TextView textCount;
+
+    Button btnNext;
+    Button btnBack;
 
     ScoreParcelable scoreParcelable = new ScoreParcelable();
 
@@ -32,8 +34,8 @@ public class OptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_options);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-        Button btnNext = findViewById(R.id.btnNext);
-        Button btnBack = findViewById(R.id.btnBack);
+        btnNext = findViewById(R.id.btnNext);
+        btnBack = findViewById(R.id.btnBack);
 
         radioGroupOptions = findViewById(R.id.options);
         textLabel = findViewById(R.id.textLabel);
@@ -46,6 +48,7 @@ public class OptionActivity extends AppCompatActivity {
             int indexRadioButton = group.indexOfChild(findViewById(checkedId));
             scoreParcelable.setChecked(indexOptionCurrent, indexRadioButton);
             textScoreTotal.setText(String.valueOf(scoreParcelable.getScoreTotal()));
+            validBtnNext();
         });
 
         btnBack.setOnClickListener(v -> handleBack());
@@ -68,7 +71,7 @@ public class OptionActivity extends AppCompatActivity {
     }
 
     private void handleNext() {
-        if (indexOptionCurrent < 7) {
+        if (indexOptionCurrent < Score.totalOptionsScore - 1) {
             indexOptionCurrent++;
             createView();
         } else {
@@ -78,60 +81,74 @@ public class OptionActivity extends AppCompatActivity {
         }
     }
 
+    private void validBtnBack()  {
+        btnBack.setVisibility(indexOptionCurrent == 0 ? View.INVISIBLE : View.VISIBLE);
+    }
+
+    private void validBtnNext() {
+        int[] checked = scoreParcelable.getChecked();
+        btnNext.setEnabled(checked[indexOptionCurrent] > -1);
+
+        if(indexOptionCurrent < Score.totalOptionsScore - 1) {
+            btnNext.setText(getString(R.string.btn_next));
+        } else {
+            btnNext.setText(getString(R.string.btn_finish));
+        }
+    }
+
     private void createView() {
         textScoreTotal.setText(String.valueOf(scoreParcelable.getScoreTotal()));
-        textCount.setText((this.indexOptionCurrent + 1) + "/" + (Score.getTotalOptions() + 2));
+        textCount.setText(
+                ((this.indexOptionCurrent + 1) + "/" + (Score.totalOptionsScore)));
 
         switch (indexOptionCurrent) {
             case 0:
-                fillLabel(R.string.label_age);
-                fillRadios(R.array.options_age);
+                fillView(R.string.label_age,R.array.options_age);
                 break;
             case 1:
-                fillLabel(R.string.label_sex);
-                fillRadios(R.array.options_sex);
+                fillView(R.string.label_sex,R.array.options_sex);
                 break;
             case 2:
-                fillLabel(R.string.label_weight);
-                fillRadios(R.array.options_weight);
+                fillView(R.string.label_weight,R.array.options_weight);
                 break;
             case 3:
-                fillLabel(R.string.label_activity);
-                fillRadios(R.array.options_activity);
+                fillView(R.string.label_activity,R.array.options_activity);
                 break;
             case 4:
-                fillLabel(R.string.label_smokes);
-                fillRadios(R.array.options_smokes);
+                fillView(R.string.label_smokes,R.array.options_smokes);
                 break;
             case 5:
-                fillLabel(R.string.label_pressure);
-                fillRadios(R.array.options_pressure);
+                fillView(R.string.label_pressure,R.array.options_pressure);
                 break;
             case 6:
-                fillLabel(R.string.label_illness_in_family);
-                fillRadios(R.array.options_illness_in_family);
+                fillView(R.string.label_illness_in_family,R.array.options_illness_in_family);
                 break;
             case 7:
-                fillLabel(R.string.label_cholesterol);
-                fillRadios(R.array.options_cholesterol);
+                fillView(R.string.label_cholesterol,R.array.options_cholesterol);
                 break;
         }
     }
 
-    private void fillLabel(int stringId) {
+    private void fillView(int stringId, int stringArrayId) {
         textLabel.setText(getResources().getString(stringId));
-    }
 
-    private void fillRadios(int stringArrayId) {
         String[] optionsString = getResources().getStringArray(stringArrayId);
         int[] checked = scoreParcelable.getChecked();
+        RadioButton btnRadioOption;
 
         for (int index = 0; index < optionsString.length; index++) {
-            RadioButton option = (RadioButton) radioGroupOptions.getChildAt(index);
-            if (checked[indexOptionCurrent] == index) {
-                option.setChecked(true);
-            }
-            option.setText(optionsString[index]);
+            btnRadioOption = (RadioButton) radioGroupOptions.getChildAt(index);
+
+            btnRadioOption.setText(optionsString[index]);
         }
+
+        if(checked[indexOptionCurrent] > -1) {
+            btnRadioOption = (RadioButton) radioGroupOptions.getChildAt(checked[indexOptionCurrent]);
+            btnRadioOption.setChecked(true);
+        } else {
+            radioGroupOptions.clearCheck();
+        }
+        validBtnNext();
+        validBtnBack();
     }
 }

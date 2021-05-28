@@ -22,6 +22,7 @@
     <string name="btn_start">Começar</string>
     <string name="btn_restart">Recomeçar</string>
     <string name="btn_next">Proximo</string>
+    <string name="btn_finish">Finalizar</string>
     <string name="btn_back">Voltar</string>
 
     <string-array name="options_results">

@@ -29,14 +29,19 @@ public class ScoreParcelable implements Parcelable {
     }
 
     public int getScoreTotal() {
+        if(scoreTotal == 0) {
+            calcScore();
+        }
         return scoreTotal;
     }
 
 
     private void calcScore() {
         scoreTotal = 0;
-        for(int index =0; index < 8;index++) {
-            scoreTotal += Score.getScore(index, checked[index]);
+        for(int index =0; index < checked.length;index++) {
+            if(checked[index] > -1) {
+                scoreTotal += Score.getScore(index, checked[index]);
+            }
         }
     }
 
@@ -57,8 +62,8 @@ public class ScoreParcelable implements Parcelable {
     }
 
     public ScoreParcelable() {
-        for(int check : checked) {
-            check = -1;
+        for(int index = 0; index < checked.length;index++) {
+            checked[index] = -1;
         }
     }
 
