@@ -1,9 +1,0 @@
-[submodule "Programacao_Orientada_a_Objeto/2021-05-19 - IMCpoo/IMCpoo"]
-	path = Programacao_Orientada_a_Objeto/2021-05-19 - IMCpoo/IMCpoo
-	url = git@github.com:BrunoCesarAngst/IMCpoo.git
-[submodule "Programacao_Orientada_a_Objeto/2021-05-12 - Android_Alcoolina/Android_Alcoolina"]
-	path = Programacao_Orientada_a_Objeto/2021-05-12 - Android_Alcoolina/Android_Alcoolina
-	url = git@github.com:DouglasSerena/Android_Alcoolina.git
-[submodule "Programacao_Orientada_a_Objeto/2021-05-26 - Android_Health/Android_Health"]
-	path = Programacao_Orientada_a_Objeto/2021-05-26 - Android_Health/Android_Health
-	url = git@github.com:DouglasSerena/Android_Health.git
