@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Alcoolina</string>
+    <string name="alt_logo_image">Logo Alcoolina. Alcohol or Gasoline?</string>
+    <string name="label_image">Alcohol or Gasoline?</string>
+    <string name="form_gasoline_label">Price of liter of gasoline</string>
+    <string name="form_gasoline_placeholder">Enter the price of gasoline</string>
+    <string name="form_alcohol_label">Price of liter of ethane</string>
+    <string name="form_alcohol_placeholder">Enter the price of alcohol</string>
+
+    <string name="form_button">Calculate</string>
+    <string name="form_button_description">Calculate which is best to use gasoline or ethanol</string>
+
+    <string name="result">Result</string>
+    <string name="result_description">Calculation result made above</string>
+
+    <string name="better_result_to_use_gasoline">Better to use gasoline.</string>
+    <string name="better_result_to_use_alcohol">Better to use alcohol.</string>
+
+    <string name="message_invalid_required_description">Erro message: Value must be informed if it is greater than 0.</string>
+    <string name="message_invalid_required">Erro: Value must be informed if it is greater than 0.</string>
+    <string name="message_invalid_required_field_blur">Blurred field error: Valor deve ser informado sendo maior que 0.</string>
+    <string name="message_error_calculator">Error: Check that all fields are filled.</string>
+
+    <string name="description_calculation">On average, a ratio of 73% or less of the price of ethanol in relation to the price of gasoline, favors the use of alcohol. If for 74% or more, use gasoline. To calculate you must divide the price of ethanol by that of gasoline</string>
+    <string name="formula_calculation">Example: 4.00 ÷ 5.00 = 0.8</string>
+</resources>

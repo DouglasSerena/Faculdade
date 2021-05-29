@@ -1,0 +1,17 @@
+<resources>
+    <color name="primaryColor">#263238</color>
+    <color name="primaryDarkColor">#263238</color>
+
+    <color name="primaryTextColor">#5f6368</color>
+    <color name="primaryLightTextColor">#70757a</color>
+
+    <color name="secondaryColor">#263238</color>
+    <color name="secondaryDarkColor">#263238</color>
+
+    <color name="secondaryTextColor">#ffffff</color>
+
+    <color name="dangerColor">#f44336</color>
+
+    <color name="primaryColorLogo">#062661</color>
+    <color name="backgroundPrimary">#ffffff</color>
+</resources>
