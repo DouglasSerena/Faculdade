@@ -1,8 +1,8 @@
 package List;
 
 public class List<T> {
-    Container<T> containerInit;
-    Container<T> containerEnd;
+    private Container<T> containerInit;
+    private Container<T> containerEnd;
     boolean notAllowEqualsObject;
     int size;
 

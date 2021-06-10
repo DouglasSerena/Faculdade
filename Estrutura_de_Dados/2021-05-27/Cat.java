@@ -1,7 +1,7 @@
-class Dog {
+class Cat {
     String name;
 
-    Dog(String name) {
+    Cat(String name) {
         this.name = name;
     }
 

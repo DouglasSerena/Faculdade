@@ -6,11 +6,24 @@ class Main {
         int index = 0;
         Dog result;
 
+        System.out.println("Tamanho: " + list.size());
+
+        result = list.remove(0);
+        System.out.println("Removido: " + result);
+
+        System.out.println("Tamanho: " + list.size());
+
         Dog dog = new Dog("Marquinos");
 
-        list.add(new Dog("Tobias"));
-        list.add(new Dog("Carro"));
-        list.add(new Dog("Avião"));
+        result = list.add(3, new Dog("Tobias"));
+        System.out.println("Adicionado: " + result);
+
+        result = list.add(new Dog("Carro"));
+        System.out.println("Adicionado: " + result);
+
+        result = list.add(new Dog("Avião"));
+        System.out.println("Adicionado: " + result);
+
         System.out.println(list);
 
         index = list.indexOf(dog);
