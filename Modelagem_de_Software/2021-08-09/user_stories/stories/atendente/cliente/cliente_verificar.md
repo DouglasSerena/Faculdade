@@ -1,4 +1,4 @@
-#### Verificar se o cliente existe
+### Verificar se o cliente existe
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Verificar no sistema se o cliente existe

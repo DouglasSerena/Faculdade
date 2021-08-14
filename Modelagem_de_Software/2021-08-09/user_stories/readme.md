@@ -7,13 +7,14 @@
 
 ---
 
-![Caso de uso](user_case/Diagrama%20de%20caso%20de%20uso.png)
+![Caso de uso](./../user_case/Diagrama%20de%20caso%20de%20uso.png)
 
----
 
-## Atendente
+----
 
-#### Atendimento
+# Atendente
+
+### Atendimento
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Atender o cliente
 - **PARA QUE:** Possa ajudar ele no seu pedido
@@ -21,14 +22,15 @@
 - **OBSERVAÇÕES:** Primeiro contato do atendente com o cliente.
 - **INFORMAÇÕES:** (VAZIO)
 
-##### testes
+#### testes
 
 - **titulo**
   - **DADO QUE:**
   - **QUANDO:**
   - **ENTÃO:**
 
-#### Registrar um cliente
+
+### Registrar um cliente
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Registrar um cliente
@@ -43,7 +45,8 @@
     - Número
     - Bairro
 
-#### Verificar se o cliente existe
+
+### Verificar se o cliente existe
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Verificar no sistema se o cliente existe
@@ -52,7 +55,8 @@
 - **OBSERVAÇÕES:** Esta etapa vem apos o cliente fazer o pedido.
 - **INFORMAÇÕES:** (VAZIO)
 
-#### Pedido cancelar
+
+### Pedido cancelar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Cancelar o pedido
@@ -61,7 +65,8 @@
 - **OBSERVAÇÕES:** Este cancelamento tem que passar pelo gerente para ser feito com sucesso.
 - **INFORMAÇÕES:** (VAZIO)
 
-#### Pedido criar
+
+### Pedido criar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Criar um pedido
@@ -73,7 +78,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido editar
+
+### Pedido editar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Editar um pedido
@@ -88,7 +94,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido finalizar
+
+### Pedido finalizar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Finalizar um pedido
@@ -101,7 +108,8 @@
 - **INFORMAÇÕES:** 
   - Forma de pagamento
 
-#### Pedido localização
+
+### Pedido localização
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Localizar um pedido específico
@@ -113,9 +121,12 @@
 
 
 
-## Cliente
 
-#### Atendimento
+----
+
+# Cliente
+
+### Atendimento
 
 - **SENDO:** Um cliente
 - **POSSO:** Entrara em contato com a pizzaria
@@ -124,7 +135,8 @@
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** (VAZIO)
 
-#### Registrar um cliente
+
+### Registrar um cliente
 
 - **SENDO:** Um cliente
 - **POSSO:** Me registrar no sistema da pizzaria
@@ -139,7 +151,7 @@
     - Número
     - Bairro
 
-#### Pedido cancelar
+### Pedido cancelar
 
 - **SENDO:** Um cliente
 - **POSSO:** Cancelar o pedido que esta pendente
@@ -148,7 +160,8 @@
 - **OBSERVAÇÕES:** Deve ser passado informações sobre o pedido para saber qual pedido é para ser cancelado
 - **INFORMAÇÕES:** Sobre o pedido/cliente
 
-#### Pedido criar
+
+### Pedido criar
 
 - **SENDO:** Um cliente
 - **POSSO:** Pode fazer um pedido de uma pizza
@@ -160,7 +173,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido editar
+
+### Pedido editar
 
 - **SENDO:** Um cliente
 - **POSSO:** Editar um pedido ja criado
@@ -176,7 +190,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido finalizar
+
+### Pedido finalizar
 
 - **SENDO:** Um cliente
 - **POSSO:** Finalizar um pedido
@@ -188,7 +203,8 @@
 - **INFORMAÇÕES:** 
   - Forma de pagamento
 
-#### Pedido localização
+
+### Pedido localização
 
 - **SENDO:** Um cliente
 - **POSSO:** Localizar o meu pedido pedido
@@ -200,9 +216,12 @@
 
 
 
-## Gerente
 
-#### Pedido cancelar
+----
+
+# Gerente
+
+### Pedido cancelar
 
 - **SENDO:** Um gerente da pizzaria
 - **POSSO:** Cancelar o pedido
@@ -210,6 +229,7 @@
 - **RESTRIÇÕES:** (VAZIO)
 - **OBSERVAÇÕES:** Para haver os cancelamento o atendente passara para o gerente qual pedido séra cancelado
 - **INFORMAÇÕES:** Sobre o pedido/cliente
+
 
 
 

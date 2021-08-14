@@ -1,4 +1,4 @@
-#### Registrar um cliente
+### Registrar um cliente
 
 - **SENDO:** Um cliente
 - **POSSO:** Me registrar no sistema da pizzaria

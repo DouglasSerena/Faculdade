@@ -1,4 +1,4 @@
-#### Pedido cancelar
+### Pedido cancelar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Cancelar o pedido

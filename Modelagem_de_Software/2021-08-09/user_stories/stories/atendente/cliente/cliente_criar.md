@@ -1,4 +1,4 @@
-#### Registrar um cliente
+### Registrar um cliente
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Registrar um cliente

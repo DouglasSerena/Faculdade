@@ -1,6 +1,8 @@
-## Atendente
+----
 
-#### Atendimento
+# Atendente
+
+### Atendimento
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Atender o cliente
 - **PARA QUE:** Possa ajudar ele no seu pedido
@@ -8,14 +10,15 @@
 - **OBSERVAÇÕES:** Primeiro contato do atendente com o cliente.
 - **INFORMAÇÕES:** (VAZIO)
 
-##### testes
+#### testes
 
 - **titulo**
   - **DADO QUE:**
   - **QUANDO:**
   - **ENTÃO:**
 
-#### Registrar um cliente
+
+### Registrar um cliente
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Registrar um cliente
@@ -30,7 +33,8 @@
     - Número
     - Bairro
 
-#### Verificar se o cliente existe
+
+### Verificar se o cliente existe
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Verificar no sistema se o cliente existe
@@ -39,7 +43,8 @@
 - **OBSERVAÇÕES:** Esta etapa vem apos o cliente fazer o pedido.
 - **INFORMAÇÕES:** (VAZIO)
 
-#### Pedido cancelar
+
+### Pedido cancelar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Cancelar o pedido
@@ -48,7 +53,8 @@
 - **OBSERVAÇÕES:** Este cancelamento tem que passar pelo gerente para ser feito com sucesso.
 - **INFORMAÇÕES:** (VAZIO)
 
-#### Pedido criar
+
+### Pedido criar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Criar um pedido
@@ -60,7 +66,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido editar
+
+### Pedido editar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Editar um pedido
@@ -75,7 +82,8 @@
   - Sabores
   - Bebidas *(OPCIONAL)*
 
-#### Pedido finalizar
+
+### Pedido finalizar
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Finalizar um pedido
@@ -88,7 +96,8 @@
 - **INFORMAÇÕES:** 
   - Forma de pagamento
 
-#### Pedido localização
+
+### Pedido localização
 
 - **SENDO:** Um atendente da pizzaria
 - **POSSO:** Localizar um pedido específico
@@ -97,4 +106,5 @@
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** 
   - Sobre o cliente
+
 

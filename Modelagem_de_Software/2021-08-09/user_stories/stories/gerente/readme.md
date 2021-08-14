@@ -1,6 +1,8 @@
-## Gerente
+----
 
-#### Pedido cancelar
+# Gerente
+
+### Pedido cancelar
 
 - **SENDO:** Um gerente da pizzaria
 - **POSSO:** Cancelar o pedido
@@ -8,4 +10,5 @@
 - **RESTRIÇÕES:** (VAZIO)
 - **OBSERVAÇÕES:** Para haver os cancelamento o atendente passara para o gerente qual pedido séra cancelado
 - **INFORMAÇÕES:** Sobre o pedido/cliente
+
 
