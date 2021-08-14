@@ -37,19 +37,6 @@
 - **INFORMAÇÕES:** Sobre o pedido/cliente
 
 
-### Pedido criar
-
-- **SENDO:** Um cliente
-- **POSSO:** Pode fazer um pedido de uma pizza
-- **PARA QUE:** Possa ser consumido pelo cliente
-- **RESTRIÇÕES:** É que o cliente deve esta registrado no sistema
-- **OBSERVAÇÕES:** (VAZIO)
-- **INFORMAÇÕES:** 
-  - Tamanho pizza
-  - Sabores
-  - Bebidas *(OPCIONAL)*
-
-
 ### Pedido editar
 
 - **SENDO:** Um cliente
@@ -67,17 +54,17 @@
   - Bebidas *(OPCIONAL)*
 
 
-### Pedido finalizar
+### Pedido criar
 
 - **SENDO:** Um cliente
-- **POSSO:** Finalizar um pedido
-- **PARA QUE:** Possa consumir e receber a pizza 
-- **RESTRIÇÕES:** 
-  - Deve ser pago
-  - Deve ser escolhido a forma de pagamento
+- **POSSO:** Pode fazer um pedido de uma pizza
+- **PARA QUE:** Possa ser consumido pelo cliente
+- **RESTRIÇÕES:** É que o cliente deve esta registrado no sistema
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** 
-  - Forma de pagamento
+  - Tamanho pizza
+  - Sabores
+  - Bebidas *(OPCIONAL)*
 
 
 ### Pedido localização
@@ -89,5 +76,18 @@
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** 
   - Sobre o pedido/cliente
+
+
+### Pedido finalizar
+
+- **SENDO:** Um cliente
+- **POSSO:** Finalizar um pedido
+- **PARA QUE:** Possa consumir e receber a pizza 
+- **RESTRIÇÕES:** 
+  - Deve ser pago
+  - Deve ser escolhido a forma de pagamento
+- **OBSERVAÇÕES:** (VAZIO)
+- **INFORMAÇÕES:** 
+  - Forma de pagamento
 
 

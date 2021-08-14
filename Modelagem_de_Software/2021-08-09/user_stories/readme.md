@@ -5,11 +5,15 @@
 
 ###### É proposto um sistema para Pizzaria onde o atendimento é feito pelo telefone para tele-entrega/delivery. Os pedidos devem conter o tamanho da pizza, os sabores e bebidas pedidas. Para os pedidos feitos é preciso o nome, número de telefone e o endereço do cliente. Um pedido pode ser incluído, editado, localizado, cancelado ou finalizado, sendo que para os cancelamentos é necessário a autorização do gerente, e para finalizar é preciso informar a forma de pagamento.
 
----
+----
 
-### Caso de uso
+## Caso de uso
 
 ![Caso de uso](./../user_case/Diagrama%20de%20caso%20de%20uso.png)
+
+----
+
+## Historias de usuário
 
 
 ----
@@ -81,6 +85,20 @@
   - Bebidas *(OPCIONAL)*
 
 
+### Pedido finalizar
+
+- **SENDO:** Um atendente da pizzaria
+- **POSSO:** Finalizar um pedido
+- **PARA QUE:** Possa concluir o pedido com sucesso
+- **RESTRIÇÕES:**
+  - O pedido tem que ter sido entregue
+  - O pedido deve ser pago
+  - Deve pedir a forma de pagamento para o cliente
+- **OBSERVAÇÕES:** (VAZIO)
+- **INFORMAÇÕES:** 
+  - Forma de pagamento
+
+
 ### Pedido editar
 
 - **SENDO:** Um atendente da pizzaria
@@ -95,20 +113,6 @@
   - Tamanho pizza
   - Sabores
   - Bebidas *(OPCIONAL)*
-
-
-### Pedido finalizar
-
-- **SENDO:** Um atendente da pizzaria
-- **POSSO:** Finalizar um pedido
-- **PARA QUE:** Possa concluir o pedido com sucesso
-- **RESTRIÇÕES:**
-  - O pedido tem que ter sido entregue
-  - O pedido deve ser pago
-  - Deve pedir a forma de pagamento para o cliente
-- **OBSERVAÇÕES:** (VAZIO)
-- **INFORMAÇÕES:** 
-  - Forma de pagamento
 
 
 ### Pedido localização
@@ -163,19 +167,6 @@
 - **INFORMAÇÕES:** Sobre o pedido/cliente
 
 
-### Pedido criar
-
-- **SENDO:** Um cliente
-- **POSSO:** Pode fazer um pedido de uma pizza
-- **PARA QUE:** Possa ser consumido pelo cliente
-- **RESTRIÇÕES:** É que o cliente deve esta registrado no sistema
-- **OBSERVAÇÕES:** (VAZIO)
-- **INFORMAÇÕES:** 
-  - Tamanho pizza
-  - Sabores
-  - Bebidas *(OPCIONAL)*
-
-
 ### Pedido editar
 
 - **SENDO:** Um cliente
@@ -193,17 +184,17 @@
   - Bebidas *(OPCIONAL)*
 
 
-### Pedido finalizar
+### Pedido criar
 
 - **SENDO:** Um cliente
-- **POSSO:** Finalizar um pedido
-- **PARA QUE:** Possa consumir e receber a pizza 
-- **RESTRIÇÕES:** 
-  - Deve ser pago
-  - Deve ser escolhido a forma de pagamento
+- **POSSO:** Pode fazer um pedido de uma pizza
+- **PARA QUE:** Possa ser consumido pelo cliente
+- **RESTRIÇÕES:** É que o cliente deve esta registrado no sistema
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** 
-  - Forma de pagamento
+  - Tamanho pizza
+  - Sabores
+  - Bebidas *(OPCIONAL)*
 
 
 ### Pedido localização
@@ -215,6 +206,19 @@
 - **OBSERVAÇÕES:** (VAZIO)
 - **INFORMAÇÕES:** 
   - Sobre o pedido/cliente
+
+
+### Pedido finalizar
+
+- **SENDO:** Um cliente
+- **POSSO:** Finalizar um pedido
+- **PARA QUE:** Possa consumir e receber a pizza 
+- **RESTRIÇÕES:** 
+  - Deve ser pago
+  - Deve ser escolhido a forma de pagamento
+- **OBSERVAÇÕES:** (VAZIO)
+- **INFORMAÇÕES:** 
+  - Forma de pagamento
 
 
 
