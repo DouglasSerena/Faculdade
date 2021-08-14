@@ -7,6 +7,8 @@
 
 ---
 
+### Caso de uso
+
 ![Caso de uso](./../user_case/Diagrama%20de%20caso%20de%20uso.png)
 
 
