@@ -1,0 +1,45 @@
+header {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+header button {
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+}
+aside {
+  left: 0;
+  top: 5vh;
+  width: 280px;
+  height: 95vh;
+  transition: 250ms;
+  position: absolute;
+  transform: translateX(-100%);
+}
+aside.open {
+  transform: translateX(0);
+}
+
+.content {
+  display: flex;
+  transition: 250ms;
+}
+
+@media (max-width: 800px) {
+  aside.open + .content::after {
+    content: "";
+    inset: 0;
+    display: flex;
+    z-index: -1;
+    opacity: 0.5;
+    position: fixed;
+    background-color: #000;
+  }
+}
+@media (min-width: 800px) {
+  aside.open + .content {
+    margin-left: 280px;
+  }
+}

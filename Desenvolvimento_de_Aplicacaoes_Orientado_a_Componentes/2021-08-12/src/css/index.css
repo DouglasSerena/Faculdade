@@ -1,0 +1,16 @@
+header {
+  min-height: 10vh;
+}
+main {
+  min-height: 80vh;
+}
+footer {
+  min-height: 10vh;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
