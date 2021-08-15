@@ -12,7 +12,7 @@
 
 ###### _atender_
 
-- **DADO QUE** hove um ligação
+- **DADO QUE** houve um ligação
 - **QUANDO** um cliente entrar em contato
 - **ENTÃO** atender ele
   - **E** seguir o atendimento normal
@@ -22,7 +22,7 @@
 - **POSSO** Registrar um cliente
 - **PARA QUE** Possa ter as informações básicas para conseguir fazer um pedido
 - **RESTRIÇÕES** O cliente passar suas informações
-- **OBSERVAÇÕES** Esta etapa pode ser pulada se o usuário ja estiver cadastrado no sistema.
+- **OBSERVAÇÕES** Está etapa pode ser pulada se o usuário já estiver cadastrado no sistema.
 - **INFORMAÇÕES**
   - Nome
   - Número de telefone
@@ -33,21 +33,21 @@
 
 ###### _registrar cliente_
 
-- **DADO QUE** hove um contato com um novo cliente
+- **DADO QUE** houve um contato com um novo cliente
 - **QUANDO** for registrar ele no sistema
-- **ENTÃO** deve salva-lo com sucesso.
+- **ENTÃO** deve salvá-lo com sucesso.
   - **E** o cliente passa a ser um cliente do sistema
 
 ###### _registrar cliente sem endereço_
 
-- **DADO QUE** hove um contato com um novo cliente
+- **DADO QUE** houve um contato com um novo cliente
 - **QUANDO** for registrar ele no sistema
   - **E** ele não passar o endereço
 - **ENTÃO** não a como registrar ele no sistema
 
-###### _registrar cliente com informações invalidas_
+###### _registrar cliente com informações inválidas_
 
-- **DADO QUE** hove um contato com um novo cliente
+- **DADO QUE** houve um contato com um novo cliente
 - **QUANDO** for registrar ele no sistema
   - **E** o cliente passar alguma informação errada
 - **ENTÃO** devera informar que os dados estão errados.
@@ -55,26 +55,26 @@
 
 - **SENDO** Um atendente da pizzaria
 - **POSSO** Verificar no sistema se o cliente existe
-- **PARA QUE** Ajudar o cliente a não ter que ficar passando suas informações varias vezes.
+- **PARA QUE** Ajudar o cliente a não ter que ficar passando suas informações várias vezes.
 - **RESTRIÇÕES** (VAZIO)
-- **OBSERVAÇÕES** Esta etapa vem apos o cliente fazer o pedido.
+- **OBSERVAÇÕES** Está etapa vem após o cliente fazer o pedido.
 - **INFORMAÇÕES** (VAZIO)
 
 ###### _verificar um novo cliente_
 
-- **DADO QUE** hove um contato com um novo cliente
+- **DADO QUE** houve um contato com um novo cliente
 - **QUANDO** for verificar ele no sistema
 - **ENTÃO** devera informa que ele não existe no sistema
 
 ###### _verificar um cliente_
 
-- **DADO QUE** hove um contato com um cliente
+- **DADO QUE** houve um contato com um cliente
 - **QUANDO** for verificar ele no sistema
 - **ENTÃO** que ele existe no sistema
 
-###### _verificar um cliente com informações invalidas_
+###### _verificar um cliente com informações inválidas_
 
-- **DADO QUE** hove um contato com um cliente
+- **DADO QUE** houve um contato com um cliente
 - **QUANDO** for verificar ele no sistema
   - **E** as informações passadas pelo cliente estiverem erradas
 - **ENTÃO** deve informar que as informações passadas estão erradas
@@ -83,7 +83,7 @@
 - **SENDO** Um atendente da pizzaria
 - **POSSO** Criar um pedido
 - **PARA QUE** Possa concluir o atendimento
-- **RESTRIÇÕES** O cliente ja estar cadastro no sistema
+- **RESTRIÇÕES** O cliente já estar cadastro no sistema
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES**
   - Tamanho pizza
@@ -92,16 +92,16 @@
 
 ###### _criar pedido_
 
-- **DADO QUE** hove uma solicitação de pedido
+- **DADO QUE** houve uma solicitação de pedido
 - **QUANDO** for criar o pedido
 - **ENTÃO** devera começar a fazer o pedido
 
-###### _criar pedido com informações invalidas_
+###### _criar pedido com informações inválidas_
 
-- **DADO QUE** hove uma solicitação de pedido
+- **DADO QUE** houve uma solicitação de pedido
 - **QUANDO** for criar o pedido
   - **E** as informações do pedido for invalida
-- **ENTÃO** informar que as informações estão invalidas
+- **ENTÃO** informar que as informações estão inválidas
 ### Pedido cancelar
 
 - **SENDO** Um atendente da pizzaria
@@ -113,13 +113,13 @@
 
 ###### _cancelar_
 
-- **DADO QUE** hove uma solicitação de cancelamento
+- **DADO QUE** houve uma solicitação de cancelamento
 - **QUANDO** for cancelar o pedido
 - **ENTÃO** deve passar para o gerente
 
 ###### _cancelar sem passar pelo gerente_
 
-- **DADO QUE** hove uma solicitação de cancelamento
+- **DADO QUE** houve uma solicitação de cancelamento
 - **QUANDO** for cancelar o pedido
   - **E** não passar pelo gerente
 - **ENTÃO** deve dar um erro informando que deve passar por ele
@@ -140,22 +140,22 @@
 
 ###### _editar pedido_
 
-- **DADO QUE** hove uma solicitação de pedido edição
+- **DADO QUE** houve uma solicitação de pedido edição
 - **QUANDO** for editar o pedido
-- **ENTÃO** o pedido sera editado
+- **ENTÃO** o pedido será editado
 
-###### _editar pedido com informações invalidas_
+###### _editar pedido com informações inválidas_
 
-- **DADO QUE** hove uma solicitação de pedido edição
+- **DADO QUE** houve uma solicitação de pedido edição
 - **QUANDO** for editar o pedido
   - **E** as novas informações do pedido for invalida
-- **ENTÃO** informar que as informações estão invalidas
+- **ENTÃO** informar que as informações estão inválidas
 
-###### _editar pedido ja pronto_
+###### _editar pedido já pronto_
 
-- **DADO QUE** hove uma solicitação de pedido edição
+- **DADO QUE** houve uma solicitação de pedido edição
 - **QUANDO** for editar o pedido
-  - **E** o pedido ja estiver pronto
+  - **E** o pedido já estiver pronto
 - **ENTÃO** devera informar que é impossível editar ele
 ### Pedido finalizar
 
@@ -172,22 +172,22 @@
 
 ###### _finalizar pedido_
 
-- **DADO QUE** hove a entrada do pedido
-- **QUANDO** for finaliza o pedido
+- **DADO QUE** houve a entrada do pedido
+- **QUANDO** for finalizar o pedido
 - **ENTÃO** devera pedir a forma de pagamento
   - **E** entregar o comprovante
 
 ###### _finalizar pedido com forma de pagamento errada_
 
-- **DADO QUE** hove a entrada do pedido
-- **QUANDO** for finaliza o pedido
+- **DADO QUE** houve a entrada do pedido
+- **QUANDO** for finalizar o pedido
   - **E** a forma de pagamento estiver errada
 - **ENTÃO** deve informar para escolher outra forma de pagamento
 ### Pedido localização
 
 - **SENDO** Um atendente da pizzaria
 - **POSSO** Localizar um pedido específico
-- **PARA QUE** O cliente possa saber aonde esta o seu pedido
+- **PARA QUE** O cliente possa saber aonde está o seu pedido
 - **RESTRIÇÕES** Informações sobre o pedido/cliente
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES**
@@ -195,14 +195,14 @@
 
 ###### _localizar pedido_
 
-- **DADO QUE** hove uma solicitação de localização do pedido
+- **DADO QUE** houve uma solicitação de localização do pedido
 - **QUANDO** for for localizar
-- **ENTÃO** deve informara aonde esta o pedido
+- **ENTÃO** deve informara aonde está o pedido
 -
 
-###### _localizar pedido que não sai para entrega_
+###### _localizar pedido que não saiu para entrega_
 
-- **DADO QUE** hove uma solicitação de localização do pedido
+- **DADO QUE** houve uma solicitação de localização do pedido
 - **QUANDO** for for localizar
   - **E** ele estiver na pizzaria ainda
 - **ENTÃO** deve informar que o pedido ainda não saiu para entrega

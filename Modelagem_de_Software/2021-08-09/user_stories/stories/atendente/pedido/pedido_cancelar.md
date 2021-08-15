@@ -8,12 +8,12 @@
 - **INFORMAÇÕES** (VAZIO)
 
 ###### *cancelar*
-  - **DADO QUE** hove uma solicitação de cancelamento
+  - **DADO QUE** houve uma solicitação de cancelamento
   - **QUANDO** for cancelar o pedido
   - **ENTÃO** deve passar para o gerente
 
 ###### *cancelar sem passar pelo gerente*
-  - **DADO QUE** hove uma solicitação de cancelamento
+  - **DADO QUE** houve uma solicitação de cancelamento
   - **QUANDO** for cancelar o pedido
     - **E** não passar pelo gerente
   - **ENTÃO** deve dar um erro informando que deve passar por ele

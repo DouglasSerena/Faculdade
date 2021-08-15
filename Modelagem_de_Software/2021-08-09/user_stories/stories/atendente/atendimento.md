@@ -7,7 +7,7 @@
 - **INFORMAÇÕES** (VAZIO)
 
 ###### *atender*
-  - **DADO QUE** hove um ligação
+  - **DADO QUE** houve um ligação
   - **QUANDO** um cliente entrar em contato
   - **ENTÃO** atender ele
     - **E** seguir o atendimento normal

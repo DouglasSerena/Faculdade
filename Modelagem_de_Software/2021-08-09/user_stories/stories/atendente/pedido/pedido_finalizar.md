@@ -12,14 +12,14 @@
   - Forma de pagamento
 
 ###### *finalizar pedido*
-  - **DADO QUE** hove a entrada do pedido
-  - **QUANDO** for finaliza o pedido
+  - **DADO QUE** houve a entrada do pedido
+  - **QUANDO** for finalizar o pedido
   - **ENTÃO** devera pedir a forma de pagamento
     - **E** entregar o comprovante
 
 ###### *finalizar pedido com forma de pagamento errada*
-  - **DADO QUE** hove a entrada do pedido
-  - **QUANDO** for finaliza o pedido
+  - **DADO QUE** houve a entrada do pedido
+  - **QUANDO** for finalizar o pedido
     - **E** a forma de pagamento estiver errada
   - **ENTÃO** deve informar para escolher outra forma de pagamento
 

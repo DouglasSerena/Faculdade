@@ -18,20 +18,20 @@
 
 ###### _registrar cliente_
 
-- **DADO QUE** hove um atendimento
+- **DADO QUE** houve um atendimento
 - **QUANDO** for passar as informações
 - **ENTÃO** devera receber o sucesso
 
 ###### _registrar cliente sem endereço_
 
-- **DADO QUE** hove um atendimento
+- **DADO QUE** houve um atendimento
 - **QUANDO** for passar as informações
   - **E** não foi passado o endereço
 - **ENTÃO** devera passar o endereço
 
-###### _registrar cliente com informações invalidas_
+###### _registrar cliente com informações inválidas_
 
-- **DADO QUE** hove um atendimento
+- **DADO QUE** houve um atendimento
 - **QUANDO** for passar as informações
   - **E** passar alguma informação errada
 - **ENTÃO** devera receber um alerta de informações erradas
@@ -48,11 +48,11 @@
 
 - **DADO QUE** foi ligado para pizzaria
 - **QUANDO** entrar em contato
-- **ENTÃO** seguira o atendimento normal
+- **ENTÃO** seguirá o atendimento normal
 ### Pedido cancelar
 
 - **SENDO** Um cliente
-- **POSSO** Cancelar o pedido que esta pendente
+- **POSSO** Cancelar o pedido que está pendente
 - **PARA QUE** Possa cancelar o pedido que não pretenda consumir
 - **RESTRIÇÕES** Deve cancelar o pedido antes de sair da pizzaria
 - **OBSERVAÇÕES** Deve ser passado informações sobre o pedido para saber qual pedido é para ser cancelado
@@ -68,7 +68,7 @@
 - **SENDO** Um cliente
 - **POSSO** Pode fazer um pedido de uma pizza
 - **PARA QUE** Possa ser consumido pelo cliente
-- **RESTRIÇÕES** É que o cliente deve esta registrado no sistema
+- **RESTRIÇÕES** É que o cliente deve está registrado no sistema
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES**
   - Tamanho pizza
@@ -79,20 +79,20 @@
 
 - **DADO QUE** foi pedido uma pizza
 - **QUANDO** for criar o pedido
-  - **E** passar as preferencias de pizza
+  - **E** passar as preferências de pizza
 - **ENTÃO** devera receber a mensagem de que foi cadastrado o pedido
 
-###### _criar pedido com informações invalidas_
+###### _criar pedido com informações inválidas_
 
 - **DADO QUE** foi pedido uma pizza
 - **QUANDO** for criar o pedido
-  - **E** passar as preferencias de pizza
+  - **E** passar as preferências de pizza
   - **E** as informações do pedido for invalida
 - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 ### Pedido editar
 
 - **SENDO** Um cliente
-- **POSSO** Editar um pedido ja criado
+- **POSSO** Editar um pedido já criado
 - **PARA QUE** Possa atualizar alguma informação do pedido
 - **RESTRIÇÕES**
   - Deve ser passado as informações sobre o pedido/cliente
@@ -109,22 +109,22 @@
 
 - **DADO QUE** foi pedido para editar o pedido
 - **QUANDO** for editar o pedido
-  - **E** passar as novas preferencias de pizza
+  - **E** passar as novas preferências de pizza
 - **ENTÃO** devera receber a mensagem de que foi editado o pedido
 
-###### _editar pedido com informações invalidas_
+###### _editar pedido com informações inválidas_
 
 - **DADO QUE** foi pedido para editar o pedido
 - **QUANDO** for editar o pedido
-  - **E** as passar as novas preferencias de pizza
+  - **E** as passar as novas preferências de pizza
   - **E** as novas informações for invalida
 - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 
-###### _editar pedido ja pronto_
+###### _editar pedido já pronto_
 
 - **DADO QUE** foi pedido para editar o pedido
 - **QUANDO** for editar o pedido
-  - **E** o pedido ja estiver pronto
+  - **E** o pedido já estiver pronto
 - **ENTÃO** devera receber o alerta de que não é mais possível altera as informações.
 ### Pedido finalizar
 
@@ -140,17 +140,17 @@
 
 ###### _finalizar pedido_
 
-- **DADO QUE** sera finalizado o pedido
+- **DADO QUE** será finalizado o pedido
 - **QUANDO** for pegar o pedido
 - **ENTÃO** devera informar a forma de pagamento
   - **E** pegar o pedido
 
 ###### _finalizar pedido com forma de pagamento errada_
 
-- **DADO QUE** sera finalizado o pedido
+- **DADO QUE** será finalizado o pedido
 - **QUANDO** for pegar o pedido
   - **E** informar a forma de pagamento errada
-- **ENTÃO** devera receber o alerta de que a forma de pagamento esta incorreta.
+- **ENTÃO** devera receber o alerta de que a forma de pagamento está incorreta.
 ### Pedido localização
 
 - **SENDO** Um cliente
@@ -163,14 +163,14 @@
 
 ###### _localizar pedido_
 
-- **DADO QUE** sera localizado o pedido
+- **DADO QUE** será localizado o pedido
 - **QUANDO** for for localizar
 - **ENTÃO** devera receber as informações da localização
 -
 
-###### _localizar pedido que não sai para entrega_
+###### _localizar pedido que não saiu para entrega_
 
-- **DADO QUE** sera localizado o pedido
+- **DADO QUE** será localizado o pedido
 - **QUANDO** for for localizar
   - **E** o pedido ainda não estiver em rota de entrega
 - **ENTÃO** devera receber o alerta de que o pedido ainda não saiu para entrega

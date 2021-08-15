@@ -9,12 +9,12 @@
   - Sobre o pedido/cliente
 
 ###### *localizar pedido*
-  - **DADO QUE** sera localizado o pedido
+  - **DADO QUE** será localizado o pedido
   - **QUANDO** for for localizar
   - **ENTÃO** devera receber as informações da localização
   - 
-###### *localizar pedido que não sai para entrega*
-  - **DADO QUE** sera localizado o pedido
+###### *localizar pedido que não saiu para entrega*
+  - **DADO QUE** será localizado o pedido
   - **QUANDO** for for localizar
     - **E** o pedido ainda não estiver em rota de entrega
   - **ENTÃO** devera receber o alerta de que o pedido ainda não saiu para entrega

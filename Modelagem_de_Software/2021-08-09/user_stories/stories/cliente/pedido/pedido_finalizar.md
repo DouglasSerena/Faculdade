@@ -11,15 +11,15 @@
   - Forma de pagamento
 
 ###### *finalizar pedido*
-  - **DADO QUE** sera finalizado o pedido
+  - **DADO QUE** será finalizado o pedido
   - **QUANDO** for pegar o pedido
   - **ENTÃO** devera informar a forma de pagamento
     - **E** pegar o pedido
 
 ###### *finalizar pedido com forma de pagamento errada*
-  - **DADO QUE** sera finalizado o pedido
+  - **DADO QUE** será finalizado o pedido
   - **QUANDO** for pegar o pedido
     - **E** informar a forma de pagamento errada
-  - **ENTÃO** devera receber o alerta de que a forma de pagamento esta incorreta.
+  - **ENTÃO** devera receber o alerta de que a forma de pagamento está incorreta.
 
 

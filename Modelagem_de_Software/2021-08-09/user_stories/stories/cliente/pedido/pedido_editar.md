@@ -1,7 +1,7 @@
 ### Pedido editar
 
 - **SENDO** Um cliente
-- **POSSO** Editar um pedido ja criado
+- **POSSO** Editar um pedido já criado
 - **PARA QUE** Possa atualizar alguma informação do pedido
 - **RESTRIÇÕES**
   - Deve ser passado as informações sobre o pedido/cliente
@@ -17,20 +17,20 @@
 ###### *editar pedido*
   - **DADO QUE** foi pedido para editar o pedido
   - **QUANDO** for editar o pedido
-    - **E** passar as novas preferencias de pizza
+    - **E** passar as novas preferências de pizza
   - **ENTÃO** devera receber a mensagem de que foi editado o pedido
 
-###### *editar pedido com informações invalidas*
+###### *editar pedido com informações inválidas*
   - **DADO QUE** foi pedido para editar o pedido
   - **QUANDO** for editar o pedido
-    - **E** as passar as novas preferencias de pizza
+    - **E** as passar as novas preferências de pizza
     - **E** as novas informações for invalida
   - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 
-###### *editar pedido ja pronto*
+###### *editar pedido já pronto*
   - **DADO QUE** foi pedido para editar o pedido
   - **QUANDO** for editar o pedido
-    - **E** o pedido ja estiver pronto
+    - **E** o pedido já estiver pronto
   - **ENTÃO** devera receber o alerta de que não é mais possível altera as informações.
 
 

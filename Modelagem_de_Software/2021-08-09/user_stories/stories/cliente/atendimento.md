@@ -10,4 +10,4 @@
 ###### *atender*
   - **DADO QUE** foi ligado para pizzaria
   - **QUANDO** entrar em contato
-  - **ENTÃO** seguira o atendimento normal
+  - **ENTÃO** seguirá o atendimento normal

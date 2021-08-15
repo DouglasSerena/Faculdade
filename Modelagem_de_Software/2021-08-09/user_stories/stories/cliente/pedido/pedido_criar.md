@@ -3,7 +3,7 @@
 - **SENDO** Um cliente
 - **POSSO** Pode fazer um pedido de uma pizza
 - **PARA QUE** Possa ser consumido pelo cliente
-- **RESTRIÇÕES** É que o cliente deve esta registrado no sistema
+- **RESTRIÇÕES** É que o cliente deve está registrado no sistema
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES** 
   - Tamanho pizza
@@ -13,13 +13,13 @@
 ###### *criar pedido*
   - **DADO QUE** foi pedido uma pizza
   - **QUANDO** for criar o pedido
-    - **E** passar as preferencias de pizza
+    - **E** passar as preferências de pizza
   - **ENTÃO** devera receber a mensagem de que foi cadastrado o pedido
 
-###### *criar pedido com informações invalidas*
+###### *criar pedido com informações inválidas*
   - **DADO QUE** foi pedido uma pizza
   - **QUANDO** for criar o pedido
-    - **E** passar as preferencias de pizza
+    - **E** passar as preferências de pizza
     - **E** as informações do pedido for invalida
   - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 

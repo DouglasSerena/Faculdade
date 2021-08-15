@@ -14,19 +14,19 @@
   - Bebidas *(OPCIONAL)*
 
 ###### *editar pedido*
-  - **DADO QUE** hove uma solicitação de pedido edição
+  - **DADO QUE** houve uma solicitação de pedido edição
   - **QUANDO** for editar o pedido
-  - **ENTÃO** o pedido sera editado
+  - **ENTÃO** o pedido será editado
 
-###### *editar pedido com informações invalidas*
-  - **DADO QUE** hove uma solicitação de pedido edição
+###### *editar pedido com informações inválidas*
+  - **DADO QUE** houve uma solicitação de pedido edição
   - **QUANDO** for editar o pedido
     - **E** as novas informações do pedido for invalida
-  - **ENTÃO** informar que as informações estão invalidas
+  - **ENTÃO** informar que as informações estão inválidas
 
-###### *editar pedido ja pronto*
-  - **DADO QUE** hove uma solicitação de pedido edição
+###### *editar pedido já pronto*
+  - **DADO QUE** houve uma solicitação de pedido edição
   - **QUANDO** for editar o pedido
-    - **E** o pedido ja estiver pronto
+    - **E** o pedido já estiver pronto
   - **ENTÃO** devera informar que é impossível editar ele
 
