@@ -21,7 +21,7 @@
 ###### *editar pedido com informações inválidas*
   - **DADO QUE** houve uma solicitação de pedido edição
   - **QUANDO** for editar o pedido
-    - **E** as novas informações do pedido for invalida
+    - **E** as novas informações do pedido for inválida
   - **ENTÃO** informar que as informações estão inválidas
 
 ###### *editar pedido já pronto*

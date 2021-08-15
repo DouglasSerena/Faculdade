@@ -38,7 +38,7 @@
 ### Atendimento
 
 - **SENDO** Um cliente
-- **POSSO** Entrara em contato com a pizzaria
+- **POSSO** Entrar em contato com a pizzaria
 - **PARA QUE** Possa fazer um pedido
 - **RESTRIÇÕES** (VAZIO)
 - **OBSERVAÇÕES** (VAZIO)
@@ -87,7 +87,7 @@
 - **DADO QUE** foi pedido uma pizza
 - **QUANDO** for criar o pedido
   - **E** passar as preferências de pizza
-  - **E** as informações do pedido for invalida
+  - **E** as informações do pedido for inválida
 - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 ### Pedido editar
 
@@ -117,7 +117,7 @@
 - **DADO QUE** foi pedido para editar o pedido
 - **QUANDO** for editar o pedido
   - **E** as passar as novas preferências de pizza
-  - **E** as novas informações for invalida
+  - **E** as novas informações for inválida
 - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 
 ###### _editar pedido já pronto_
@@ -125,7 +125,7 @@
 - **DADO QUE** foi pedido para editar o pedido
 - **QUANDO** for editar o pedido
   - **E** o pedido já estiver pronto
-- **ENTÃO** devera receber o alerta de que não é mais possível altera as informações.
+- **ENTÃO** devera receber o alerta de que não é mais possível alterar as informações.
 ### Pedido finalizar
 
 - **SENDO** Um cliente

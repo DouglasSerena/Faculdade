@@ -4,7 +4,7 @@
 - **POSSO** Registrar um cliente
 - **PARA QUE** Possa ter as informações básicas para conseguir fazer um pedido
 - **RESTRIÇÕES** O cliente passar suas informações
-- **OBSERVAÇÕES** Está etapa pode ser pulada se o usuário já estiver cadastrado no sistema.
+- **OBSERVAÇÕES** Esta etapa pode ser pulada se o usuário já estiver cadastrado no sistema.
 - **INFORMAÇÕES**
   - Nome
   - Número de telefone

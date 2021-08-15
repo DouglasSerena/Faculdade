@@ -4,7 +4,7 @@
 - **POSSO** Cancelar o pedido
 - **PARA QUE** Não ocorra de cliente receber algo que não queira mais.
 - **RESTRIÇÕES** (VAZIO)
-- **OBSERVAÇÕES** Para haver um cancelamento o atendente passara para o gerente qual pedido séra cancelado
+- **OBSERVAÇÕES** Para haver um cancelamento o atendente passara para o gerente qual pedido será cancelado
 - **INFORMAÇÕES** Sobre o pedido/cliente
 
 ###### *cancelar*

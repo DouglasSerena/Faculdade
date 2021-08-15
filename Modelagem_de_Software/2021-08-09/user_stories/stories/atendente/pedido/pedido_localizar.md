@@ -2,7 +2,7 @@
 
 - **SENDO** Um atendente da pizzaria
 - **POSSO** Localizar um pedido específico
-- **PARA QUE** O cliente possa saber aonde está o seu pedido
+- **PARA QUE** O cliente possa saber onde está o seu pedido
 - **RESTRIÇÕES** Informações sobre o pedido/cliente
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES** 
@@ -11,7 +11,7 @@
 ###### *localizar pedido*
   - **DADO QUE** houve uma solicitação de localização do pedido
   - **QUANDO** for for localizar
-  - **ENTÃO** deve informara aonde está o pedido
+  - **ENTÃO** deve informar onde está o pedido
   - 
 ###### *localizar pedido que não saiu para entrega*
   - **DADO QUE** houve uma solicitação de localização do pedido

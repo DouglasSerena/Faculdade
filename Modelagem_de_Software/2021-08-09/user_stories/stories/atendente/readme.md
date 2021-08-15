@@ -22,7 +22,7 @@
 - **POSSO** Registrar um cliente
 - **PARA QUE** Possa ter as informações básicas para conseguir fazer um pedido
 - **RESTRIÇÕES** O cliente passar suas informações
-- **OBSERVAÇÕES** Está etapa pode ser pulada se o usuário já estiver cadastrado no sistema.
+- **OBSERVAÇÕES** Esta etapa pode ser pulada se o usuário já estiver cadastrado no sistema.
 - **INFORMAÇÕES**
   - Nome
   - Número de telefone
@@ -100,7 +100,7 @@
 
 - **DADO QUE** houve uma solicitação de pedido
 - **QUANDO** for criar o pedido
-  - **E** as informações do pedido for invalida
+  - **E** as informações do pedido for inválida
 - **ENTÃO** informar que as informações estão inválidas
 ### Pedido cancelar
 
@@ -148,7 +148,7 @@
 
 - **DADO QUE** houve uma solicitação de pedido edição
 - **QUANDO** for editar o pedido
-  - **E** as novas informações do pedido for invalida
+  - **E** as novas informações do pedido for inválida
 - **ENTÃO** informar que as informações estão inválidas
 
 ###### _editar pedido já pronto_
@@ -187,7 +187,7 @@
 
 - **SENDO** Um atendente da pizzaria
 - **POSSO** Localizar um pedido específico
-- **PARA QUE** O cliente possa saber aonde está o seu pedido
+- **PARA QUE** O cliente possa saber onde está o seu pedido
 - **RESTRIÇÕES** Informações sobre o pedido/cliente
 - **OBSERVAÇÕES** (VAZIO)
 - **INFORMAÇÕES**
@@ -197,7 +197,7 @@
 
 - **DADO QUE** houve uma solicitação de localização do pedido
 - **QUANDO** for for localizar
-- **ENTÃO** deve informara aonde está o pedido
+- **ENTÃO** deve informar onde está o pedido
 -
 
 ###### _localizar pedido que não saiu para entrega_

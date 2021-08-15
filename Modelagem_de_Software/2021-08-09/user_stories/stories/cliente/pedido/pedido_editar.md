@@ -24,14 +24,14 @@
   - **DADO QUE** foi pedido para editar o pedido
   - **QUANDO** for editar o pedido
     - **E** as passar as novas preferências de pizza
-    - **E** as novas informações for invalida
+    - **E** as novas informações for inválida
   - **ENTÃO** devera receber o alerta de que as informações estão erradas.
 
 ###### *editar pedido já pronto*
   - **DADO QUE** foi pedido para editar o pedido
   - **QUANDO** for editar o pedido
     - **E** o pedido já estiver pronto
-  - **ENTÃO** devera receber o alerta de que não é mais possível altera as informações.
+  - **ENTÃO** devera receber o alerta de que não é mais possível alterar as informações.
 
 
 

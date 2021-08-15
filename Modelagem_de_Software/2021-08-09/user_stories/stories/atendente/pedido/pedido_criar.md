@@ -18,5 +18,5 @@
 ###### *criar pedido com informações inválidas*
   - **DADO QUE** houve uma solicitação de pedido
   - **QUANDO** for criar o pedido
-    - **E** as informações do pedido for invalida
+    - **E** as informações do pedido for inválida
   - **ENTÃO** informar que as informações estão inválidas
