@@ -1,4 +1,5 @@
 const { promisify } = require("util");
+const prettier = require("prettier");
 const glob = require("glob");
 const path = require("path");
 const fs = require("fs");
@@ -26,7 +27,7 @@ async function main() {
   );
 
   for await (let file of files) {
-    await writeFile(file);
+    await writeFile(file, stream);
   }
 }
 
@@ -48,10 +49,13 @@ function writeFile(file, outputStream) {
   return new Promise((resolve) => {
     fs.createReadStream(file)
       .on("data", (chunk) => {
-        outputStream.write(chunk);
+        outputStream.write(
+          prettier.format(chunk.toString("utf-8"), {
+            parser: "markdown",
+          })
+        );
       })
       .on("resume", () => {
-        outputStream.write("\n\n");
         resolve(null);
       });
   });
