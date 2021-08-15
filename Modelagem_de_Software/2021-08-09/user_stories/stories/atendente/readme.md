@@ -51,6 +51,27 @@
 - **QUANDO** for registrar ele no sistema
   - **E** o cliente passar alguma informação errada
 - **ENTÃO** devera informar que os dados estão errados.
+### Pedido cancelar
+
+- **SENDO** Um atendente da pizzaria
+- **POSSO** Cancelar o pedido
+- **PARA QUE** Não ocorra de cliente receber algo que não queira mais.
+- **RESTRIÇÕES** Para fazer o cancelamento o pedido não pode ser saído da pizzaria e é obrigatório a passar pelo gerente
+- **OBSERVAÇÕES** Este cancelamento tem que passar pelo gerente para ser feito com sucesso.
+- **INFORMAÇÕES** (VAZIO)
+
+###### _cancelar_
+
+- **DADO QUE** houve uma solicitação de cancelamento
+- **QUANDO** for cancelar o pedido
+- **ENTÃO** deve passar para o gerente
+
+###### _cancelar sem passar pelo gerente_
+
+- **DADO QUE** houve uma solicitação de cancelamento
+- **QUANDO** for cancelar o pedido
+  - **E** não passar pelo gerente
+- **ENTÃO** deve dar um erro informando que deve passar por ele
 ### Verificar se o cliente existe
 
 - **SENDO** Um atendente da pizzaria
@@ -102,27 +123,32 @@
 - **QUANDO** for criar o pedido
   - **E** as informações do pedido for inválida
 - **ENTÃO** informar que as informações estão inválidas
-### Pedido cancelar
+### Pedido finalizar
 
 - **SENDO** Um atendente da pizzaria
-- **POSSO** Cancelar o pedido
-- **PARA QUE** Não ocorra de cliente receber algo que não queira mais.
-- **RESTRIÇÕES** Para fazer o cancelamento o pedido não pode ser saído da pizzaria e é obrigatório a passar pelo gerente
-- **OBSERVAÇÕES** Este cancelamento tem que passar pelo gerente para ser feito com sucesso.
-- **INFORMAÇÕES** (VAZIO)
+- **POSSO** Finalizar um pedido
+- **PARA QUE** Possa concluir o pedido com sucesso
+- **RESTRIÇÕES**
+  - O pedido tem que ter sido entregue
+  - O pedido deve ser pago
+  - Deve pedir a forma de pagamento para o cliente
+- **OBSERVAÇÕES** (VAZIO)
+- **INFORMAÇÕES**
+  - Forma de pagamento
 
-###### _cancelar_
+###### _finalizar pedido_
 
-- **DADO QUE** houve uma solicitação de cancelamento
-- **QUANDO** for cancelar o pedido
-- **ENTÃO** deve passar para o gerente
+- **DADO QUE** houve a entrada do pedido
+- **QUANDO** for finalizar o pedido
+- **ENTÃO** devera pedir a forma de pagamento
+  - **E** entregar o comprovante
 
-###### _cancelar sem passar pelo gerente_
+###### _finalizar pedido com forma de pagamento errada_
 
-- **DADO QUE** houve uma solicitação de cancelamento
-- **QUANDO** for cancelar o pedido
-  - **E** não passar pelo gerente
-- **ENTÃO** deve dar um erro informando que deve passar por ele
+- **DADO QUE** houve a entrada do pedido
+- **QUANDO** for finalizar o pedido
+  - **E** a forma de pagamento estiver errada
+- **ENTÃO** deve informar para escolher outra forma de pagamento
 ### Pedido editar
 
 - **SENDO** Um atendente da pizzaria
@@ -157,32 +183,6 @@
 - **QUANDO** for editar o pedido
   - **E** o pedido já estiver pronto
 - **ENTÃO** devera informar que é impossível editar ele
-### Pedido finalizar
-
-- **SENDO** Um atendente da pizzaria
-- **POSSO** Finalizar um pedido
-- **PARA QUE** Possa concluir o pedido com sucesso
-- **RESTRIÇÕES**
-  - O pedido tem que ter sido entregue
-  - O pedido deve ser pago
-  - Deve pedir a forma de pagamento para o cliente
-- **OBSERVAÇÕES** (VAZIO)
-- **INFORMAÇÕES**
-  - Forma de pagamento
-
-###### _finalizar pedido_
-
-- **DADO QUE** houve a entrada do pedido
-- **QUANDO** for finalizar o pedido
-- **ENTÃO** devera pedir a forma de pagamento
-  - **E** entregar o comprovante
-
-###### _finalizar pedido com forma de pagamento errada_
-
-- **DADO QUE** houve a entrada do pedido
-- **QUANDO** for finalizar o pedido
-  - **E** a forma de pagamento estiver errada
-- **ENTÃO** deve informar para escolher outra forma de pagamento
 ### Pedido localização
 
 - **SENDO** Um atendente da pizzaria

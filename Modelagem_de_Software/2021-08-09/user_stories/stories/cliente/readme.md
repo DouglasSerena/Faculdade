@@ -1,6 +1,20 @@
 ---
 
 # Cliente
+### Atendimento
+
+- **SENDO** Um cliente
+- **POSSO** Entrar em contato com a pizzaria
+- **PARA QUE** Possa fazer um pedido
+- **RESTRIÇÕES** (VAZIO)
+- **OBSERVAÇÕES** (VAZIO)
+- **INFORMAÇÕES** (VAZIO)
+
+###### _atender_
+
+- **DADO QUE** foi ligado para pizzaria
+- **QUANDO** entrar em contato
+- **ENTÃO** seguirá o atendimento normal
 ### Registrar um cliente
 
 - **SENDO** Um cliente
@@ -35,20 +49,6 @@
 - **QUANDO** for passar as informações
   - **E** passar alguma informação errada
 - **ENTÃO** devera receber um alerta de informações erradas
-### Atendimento
-
-- **SENDO** Um cliente
-- **POSSO** Entrar em contato com a pizzaria
-- **PARA QUE** Possa fazer um pedido
-- **RESTRIÇÕES** (VAZIO)
-- **OBSERVAÇÕES** (VAZIO)
-- **INFORMAÇÕES** (VAZIO)
-
-###### _atender_
-
-- **DADO QUE** foi ligado para pizzaria
-- **QUANDO** entrar em contato
-- **ENTÃO** seguirá o atendimento normal
 ### Pedido cancelar
 
 - **SENDO** Um cliente
