@@ -4,3 +4,6 @@
 [submodule "Programacao_Orientada_a_Objeto/2021-05-26 - Android_Health/Android_Health"]
 	path = Programacao_Orientada_a_Objeto/2021-05-26 - Android_Health/Android_Health
 	url = git@github.com:DouglasSerena/Android_Health.git
+[submodule "Event Finder - LDP"]
+	path = Event Finder - LDP
+	url = git@github.com:DouglasSerena/event-finder.git
