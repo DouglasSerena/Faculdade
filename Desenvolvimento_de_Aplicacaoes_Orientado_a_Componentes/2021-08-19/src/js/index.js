@@ -1,5 +1,35 @@
-window.__dirname__ = "/src";
+// CONSTANTES
+window.path_views = "/src/views";
 
+// ROTEAMENTO
+function startRouter() {
+  if (location.pathname.endsWith("index.html")) {
+    history.replaceState({}, "", location.pathname.replace("index.html", ""));
+  }
+  render($(location).prop("hash").substring(2) || "home");
+
+  function render(page) {
+    $("#root").load(`${path_views}/${page}`);
+    $(location).prop("hash", `#/${page}`);
+
+    $("#aside a.active").removeClass("active");
+    $(`#aside a[href="#/${page}"]`).addClass("active");
+    if ($(window).width() <= 800) {
+      $("#aside").removeClass("open");
+    }
+  }
+
+  document.$redirect = function (page, data) {
+    this.$data = data;
+    this.location.hash = `#/${page}`;
+  };
+
+  $(window).on("hashchange", () => {
+    render($(location).prop("hash").substring(2));
+  });
+}
+
+// INICIAR
 $(function () {
   if ($(window).width() > 800) {
     $("#aside").addClass("open");
@@ -7,37 +37,9 @@ $(function () {
   $("#btn-aside").on("click", () => {
     $("#aside").toggleClass("open");
   });
-  this.render("home");
+  $("#overlay").on("click", () => {
+    $("#aside").removeClass("open");
+  });
 
-  for (let link of $("#aside [data-render]")) {
-    $(link).on("click", () => {
-      activeLink(link);
-      this.render($(link).data().render);
-    });
-  }
+  startRouter();
 });
-
-function activeLink(ref) {
-  for (let link of $("#aside [data-render]")) {
-    $(link).removeClass("active");
-  }
-  $(ref).addClass("active");
-}
-
-document.render = function (render, data) {
-  this.data = data;
-  switch (render) {
-    case "home":
-      $("#root").load(`${__dirname__}/views/home`);
-      break;
-    case "about":
-      $("#root").load(`${__dirname__}/views/about`);
-      break;
-    case "contact":
-      $("#root").load(`${__dirname__}/views/contact`);
-      break;
-    case "contact-info":
-      $("#root").load(`${__dirname__}/views/contact/info`);
-      break;
-  }
-};

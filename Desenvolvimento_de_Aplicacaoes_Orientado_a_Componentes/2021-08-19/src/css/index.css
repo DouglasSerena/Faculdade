@@ -12,10 +12,11 @@ header button {
 aside {
   left: 0;
   top: 54px;
+  z-index: 1;
   width: 280px;
-  height: calc(100vh - 54px);
   transition: 250ms;
   position: absolute;
+  height: calc(100vh - 54px);
   transform: translateX(-100%);
 }
 aside.open {
@@ -26,16 +27,19 @@ aside.open {
   display: flex;
   transition: 250ms;
 }
+.content > .overlay {
+  inset: 0;
+  top: 54px;
+  opacity: 0;
+  opacity: 0.5;
+  display: none;
+  position: absolute;
+  background-color: #000;
+}
 
 @media (max-width: 800px) {
-  aside.open + .content::after {
-    content: "";
-    inset: 0;
+  aside.open + .content > .overlay {
     display: flex;
-    z-index: -1;
-    opacity: 0.5;
-    position: fixed;
-    background-color: #000;
   }
 }
 @media (min-width: 800px) {

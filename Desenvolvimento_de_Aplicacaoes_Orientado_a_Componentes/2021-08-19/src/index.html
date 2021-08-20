@@ -28,7 +28,9 @@
     <!-- MEU CSS -->
     <link rel="stylesheet" href="./css/index.css" />
     <!-- MEU SCRIPT -->
-    <script type="module" src="./js/index.js"></script>
+    <script src="./js/lib/utils.browser.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/validator.js"></script>
   </head>
   <body>
     <header class="container-fluid bg-dark">
@@ -44,13 +46,13 @@
     >
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a data-render="home" href="#" class="nav-link active"> Home </a>
+          <a href="#/home" class="nav-link active"> Home </a>
         </li>
         <li class="nav-item">
-          <a data-render="about" href="#" class="nav-link"> sobre </a>
+          <a href="#/about" class="nav-link"> sobre </a>
         </li>
         <li class="nav-item">
-          <a data-render="contact" href="#" class="nav-link"> contatos </a>
+          <a href="#/contact" class="nav-link"> contatos </a>
         </li>
       </ul>
     </aside>
@@ -59,6 +61,7 @@
       <div class="container mt-4">
         <main id="root"></main>
       </div>
+      <div id="overlay" class="overlay"></div>
     </div>
   </body>
 </html>

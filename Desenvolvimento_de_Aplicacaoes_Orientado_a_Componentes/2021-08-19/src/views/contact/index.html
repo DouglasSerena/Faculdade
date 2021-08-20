@@ -1,16 +1,50 @@
 <form id="contact-form">
+  <!-- NOME -->
   <div class="mb-3">
     <label for="name">Nome</label>
-    <input required class="form-control" id="name" name="name" type="text" />
+    <input
+      required
+      id="name"
+      name="name"
+      type="text"
+      class="form-control"
+      placeholder="fulano"
+    />
   </div>
+
+  <!-- EMAIL -->
   <div class="mb-3">
     <label for="email">Email</label>
-    <input required class="form-control" type="email" name="email" id="email" />
+    <input
+      required
+      id="email"
+      name="email"
+      type="email"
+      class="form-control"
+      placeholder="exemplo@gmail.com"
+    />
   </div>
+
+  <!-- TELEFONE -->
+  <div class="mb-3">
+    <label for="tel">Telefone</label>
+    <input
+      id="tel"
+      required
+      name="tel"
+      type="tel"
+      minlength="13"
+      class="form-control"
+      placeholder="(00) 0 0000-0000"
+    />
+  </div>
+
+  <!-- ASSUNTO -->
   <div class="mb-3">
     <label for="subject">Assunto</label>
     <textarea class="form-control" name="subject" id="subject"></textarea>
   </div>
+
   <button type="submit" class="btn btn-primary">enviar</button>
 </form>
 
