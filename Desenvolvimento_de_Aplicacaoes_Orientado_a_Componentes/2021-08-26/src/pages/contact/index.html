@@ -1,0 +1,74 @@
+<form id="contact-form">
+  <!-- NOME -->
+  <div class="mb-3">
+    <label for="name">Nome</label>
+    <input
+      required
+      id="name"
+      type="text"
+      name="name"
+      class="form-control"
+      placeholder="fulano"
+    />
+  </div>
+
+  <!-- EMAIL -->
+  <div class="mb-3">
+    <label for="email">Email</label>
+    <input
+      required
+      id="email"
+      type="email"
+      name="email"
+      class="form-control"
+      placeholder="exemplo@gmail.com"
+    />
+  </div>
+
+  <!-- TELEFONE -->
+  <div class="mb-3">
+    <label for="tel">Telefone</label>
+    <input
+      id="tel"
+      required
+      type="tel"
+      name="tel"
+      minlength="13"
+      class="form-control"
+      placeholder="(00) 0 0000-0000"
+    />
+  </div>
+
+  <!-- CEP -->
+  <div class="mb-3">
+    <label for="cep">Cep</label>
+    <input
+      id="cep"
+      required
+      name="cep"
+      type="text"
+      minlength="9"
+      class="form-control"
+      placeholder="00000-000"
+    />
+  </div>
+
+  <!-- ASSUNTO -->
+  <div class="mb-3">
+    <label for="subject">Assunto</label>
+    <textarea class="form-control" name="subject" id="subject"></textarea>
+  </div>
+
+  <div id="alert-error" class="alert alert-danger" role="alert"></div>
+
+  <button type="submit" class="btn btn-primary">
+    <div
+      id="loading"
+      role="status"
+      class="spinner-border spinner-border-sm"
+    ></div>
+    enviar
+  </button>
+</form>
+
+<script src="./pages/contact/index.js"></script>

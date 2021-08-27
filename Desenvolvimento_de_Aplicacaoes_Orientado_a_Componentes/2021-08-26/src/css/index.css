@@ -1,0 +1,57 @@
+header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+header button {
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  justify-content: center;
+}
+aside {
+  left: 0;
+  top: 54px;
+  z-index: 1;
+  width: 280px;
+  transition: 250ms;
+  position: absolute;
+  height: calc(100vh - 54px);
+  transform: translateX(-100%);
+}
+aside.open {
+  transform: translateX(0);
+}
+
+.content {
+  display: flex;
+  transition: 250ms;
+}
+.content > .overlay {
+  inset: 0;
+  top: 54px;
+  opacity: 0;
+  opacity: 0.5;
+  display: none;
+  position: absolute;
+  background-color: #000;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+.nav-link > .material-icons {
+  margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+  aside.open + .content > .overlay {
+    display: flex;
+  }
+}
+@media (min-width: 800px) {
+  aside.open + .content {
+    margin-left: 280px;
+  }
+}
