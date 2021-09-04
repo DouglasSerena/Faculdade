@@ -48,10 +48,6 @@ $(function () {
   });
 });
 
-function findCep(cep) {
-  cep = cep.replace(/\D/g, "");
-  if (cep.length === 8) {
-    return $.when($.get(`https://viacep.com.br/ws/${cep}/json`));
-  }
-  return Promise.reject({ error: true });
+function searchCep(cep, callback) {
+  $.get(`https://viacep.com.br/ws/${cep}/json`).done(callback)
 }

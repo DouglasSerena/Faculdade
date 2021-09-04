@@ -43,3 +43,7 @@ $(function () {
 
   startRouter();
 });
+
+$.get("https://api.github.com/users/DouglasSerena").done((res) =>
+  console.log(res)
+);
