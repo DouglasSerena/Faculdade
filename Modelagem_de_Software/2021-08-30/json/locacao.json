@@ -1,0 +1,30 @@
+[
+  {
+    "codigo": 1,
+    "dataHora": "2021-09-03T12:30:00-03:00",
+    "cliente": {
+      "codigo": 1,
+      "nome": "Douglas",
+      "whatsapp": "51993234701"
+    },
+    "quadra": {
+      "codigo": 1,
+      "quantidadePessoa": 14,
+      "diasDisponiveis": ["segunda", "terça", "quarta"]
+    }
+  },
+  {
+    "codigo": 2,
+    "dataHora": "2021-11-13T17:30:00-03:00",
+    "cliente": {
+      "codigo": 3,
+      "nome": "Aline",
+      "whatsapp": "51993234701"
+    },
+    "quadra": {
+      "codigo": 1,
+      "quantidadePessoa": 14,
+      "diasDisponiveis": ["segunda", "terça", "quarta"]
+    }
+  }
+]

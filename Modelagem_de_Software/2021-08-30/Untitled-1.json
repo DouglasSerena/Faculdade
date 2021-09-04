@@ -1,0 +1,20 @@
+// CURSO
+
+// TURMA
+
+// MATRICULA
+{
+  "codigo": 1,
+  "aluno": {
+    "codigo": 1,
+    "nome": "Douglas",
+    "telefone": "00000000000"
+  }
+}
+
+// ALUNO
+{
+  "codigo": 1,
+  "nome": "Douglas",
+  "telefone": "00000000000"
+}

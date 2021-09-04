@@ -1,0 +1,12 @@
+[
+  {
+    "codigo": 1,
+    "quantidadePessoa": 14,
+    "diasDisponiveis": ["segunda", "tersa", "quarta"]
+  },
+  {
+    "codigo": 2,
+    "quantidadePessoa": 10,
+    "diasDisponiveis": ["segunda", "quarta", "sábado"]
+  }
+]
