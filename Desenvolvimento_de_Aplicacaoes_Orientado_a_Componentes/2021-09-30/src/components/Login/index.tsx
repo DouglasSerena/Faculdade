@@ -4,8 +4,8 @@ import { Container } from "./style";
 import { Button } from "../Button";
 
 function Login() {
-  let emailRef = useRef<HTMLInputElement | null>(null);
-  let passwordRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
+  const passwordRef = useRef<HTMLInputElement | null>(null);
 
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
@@ -21,16 +21,8 @@ function Login() {
     <Container>
       <h2 className="title">Login</h2>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <InputBlock
-          type="email"
-          label="Email"
-          register={(ref) => (emailRef = ref)}
-        />
-        <InputBlock
-          label="Senha"
-          type="password"
-          register={(ref) => (passwordRef = ref)}
-        />
+        <InputBlock type="email" label="Email" register={emailRef} />
+        <InputBlock label="Senha" type="password" register={passwordRef} />
         <Button color="primary" type="submit">
           Logar
         </Button>

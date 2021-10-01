@@ -9,14 +9,14 @@ import { Container, Label, Input } from "./style";
 
 interface IInputProp extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  register: (ref: MutableRefObject<HTMLInputElement | null>) => void;
+  register: MutableRefObject<HTMLInputElement | null>;
 }
 
 const InputBlock: FC<IInputProp> = ({ label, register, ...rest }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    register(inputRef);
+    register.current = inputRef.current;
   }, [register, inputRef]);
 
   return (
