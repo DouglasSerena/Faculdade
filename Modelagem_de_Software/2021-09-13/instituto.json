@@ -1,0 +1,23 @@
+[
+  {
+    "siglaInstituto": "TR",
+    "nomeInstituto": "Torre",
+    "universidade": {
+      "sigla": "Ulbra",
+      "nome": "Universidade Luterana do Brasil"
+    },
+    "cursos": [
+      {
+        "codigoCurso": "1",
+        "nomeCurso": "Análise de sistemas"
+      }
+    ],
+    "servidores": [
+      {
+        "SIAPE": 1,
+        "nomeServidor": "Caixa",
+        "servidores": []
+      }
+    ]
+  }
+]
