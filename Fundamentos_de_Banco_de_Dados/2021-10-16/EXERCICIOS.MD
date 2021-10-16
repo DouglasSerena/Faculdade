@@ -1,0 +1,16 @@
+- 🆗 Criar todas as tabelas do esquema.
+- 🆗 Inserir 3 registros em cada tabela.
+- 🆗 Atualizar o preço do medicamento de código 1 em 20%.
+- 🆗 Excluir a cidade cujo código é 3.
+- 🆗 Listar os nomes das cidades do estado RS. 
+- 🆗 Listar todos os nomes de medicamentos e preço.
+- 🆗 Listar o nome e telefone dos médicos da cidade de ‘Torres’.
+- 🆗 Listar todas os nomes dos medicamentos, juntamente com a posologia, prescritos na consulta de código 1.
+- 🆗 Listar o nome e telefone de todos os pacientes que moram na cidade de nome ‘Capão da Canoa’.
+- 🆗 Listar os nomes dos pacientes que tem consulta marcada.
+- 🆗 Listar todos os nomes e telefones dos pacientes das consultas marcadas para o dia ’07/12/2020’.
+- 🆗 Mostrar a média de preços dos medicamentos.
+- 🆗 Mostrar o número total de consultas cadastradas.
+- 🆗 Listar o nome do medicamento mais caro.
+- 🆗 Listar os nomes dos medicamentos que tem preço acima da média. 
+- 🆗 Listar todas as consultas com nome do médico, nome do paciente, data e hora.
