@@ -11,7 +11,7 @@ function Contact() {
 
   const onSubmit = async (data: any) => {
     const [_, error] = await handleTry(api.post<any>("/contacts", data)); // eslint-disable-line
-    if (error) {
+    if (!error) {
       history.push("/contact/list");
     }
   };
@@ -19,9 +19,13 @@ function Contact() {
   return (
     <main className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Nome:" register={{ name: "nome", register }} />
+        <Input label="Nome:" register={{ name: "name", register }} />
         <Input label="Email: " register={{ name: "email", register }} />
         <Textarea label="Message: " register={{ name: "message", register }} />
+        <Textarea
+          label="Descrição: "
+          register={{ name: "description", register }}
+        />
         <button className="mt-2 btn btn-primary" type="submit">
           Enviar
         </button>
