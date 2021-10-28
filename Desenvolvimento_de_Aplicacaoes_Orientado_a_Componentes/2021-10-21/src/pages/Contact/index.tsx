@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import api from "src/api";
-import Input from "src/components/form/Input";
-import Textarea from "src/components/form/Textarea";
+import Field from "src/components/Field";
 import { handleTry } from "src/utils/handle-try";
 
 function Contact() {
@@ -19,10 +18,13 @@ function Contact() {
   return (
     <main className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Nome:" register={{ name: "name", register }} />
-        <Input label="Email: " register={{ name: "email", register }} />
-        <Textarea label="Message: " register={{ name: "message", register }} />
-        <Textarea
+        <Field.Input label="Nome:" register={{ name: "name", register }} />
+        <Field.Input label="Email: " register={{ name: "email", register }} />
+        <Field.Textarea
+          label="Message: "
+          register={{ name: "message", register }}
+        />
+        <Field.Textarea
           label="Descrição: "
           register={{ name: "description", register }}
         />

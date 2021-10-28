@@ -3,7 +3,7 @@ import { FC, InputHTMLAttributes } from "react";
 import { RegisterOptions, UseFormRegister } from "react-hook-form";
 import { classNames } from "../../../utils/class-names";
 
-interface IInputProp extends InputHTMLAttributes<HTMLInputElement> {
+interface ITextareaProp extends InputHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   mask?: string;
   maskConfig?: Partial<TConfigMask>;
@@ -15,8 +15,8 @@ interface IInputProp extends InputHTMLAttributes<HTMLInputElement> {
   };
 }
 
-const Input: FC<IInputProp> = ({ register, ...options }) => {
-  const inputClass = classNames({
+const Textarea: FC<ITextareaProp> = ({ register, ...options }) => {
+  const textareaClass = classNames({
     "form-control": true,
     "form-control-lg": options.scale === "large",
     "form-control-sm": options.scale === "small",
@@ -27,14 +27,13 @@ const Input: FC<IInputProp> = ({ register, ...options }) => {
       <label className="form-label" htmlFor={options.label}>
         {options.label}
       </label>
-      <input
-        type="text"
+      <textarea
         id={options.label}
-        className={inputClass}
         {...register?.register(register.name, register.options)}
+        className={`${textareaClass} ${options.className || ""}`}
       />
     </div>
   );
 };
 
-export default Input;
+export default Textarea;

@@ -17,7 +17,6 @@ function Landing() {
 
   return (
     <main className="container">
-      <h2>{page?.page}</h2>
       <p dangerouslySetInnerHTML={{ __html: page?.content || "" }}></p>
     </main>
   );
