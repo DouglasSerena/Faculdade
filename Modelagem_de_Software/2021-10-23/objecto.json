@@ -1,0 +1,32 @@
+{
+  "id": 1,
+  "valorTotal": 20,
+  "cliente": {
+    "id": 1,
+    "cpf": "00000000000",
+    "email": "cliente@gmail.com",
+    "enderecos": [
+      {
+        "cep": "00000000",
+        "estado": "",
+        "logradouro": "",
+        "bairro": "",
+        "numero": "1234",
+        "cidade": "torres"
+      }
+    ]
+  },
+  "itens": [
+    {
+      "id": 1,
+      "quantidade": 2,
+      "valorTotal": 20,
+      "produto": {
+        "id": 1,
+        "nome": "",
+        "preco": 10,
+        "quantidadeEstoque": 20
+      }
+    }
+  ]
+}
