@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import api from "src/api";
 import Field from "src/components/Field";
 import { handleTry } from "src/utils/handle-try";
+import List from "./List";
 
 function Contact() {
   const history = useHistory();
@@ -17,6 +18,9 @@ function Contact() {
 
   return (
     <main className="container">
+      <div className="py-3">
+        <h3>Contatos</h3>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field.Input label="Nome:" register={{ name: "name", register }} />
         <Field.Input label="Email: " register={{ name: "email", register }} />
@@ -36,4 +40,6 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Object.assign(Contact, {
+  List,
+});

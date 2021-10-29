@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@douglas-serena/decorators": "^1.0.11",
-    "@douglas-serena/utils": "^1.4.13",
+    "@douglas-serena/utils": "^1.5.4",
     "@types/react-router-dom": "^5.3.1",
     "axios": "^0.23.0",
     "react": "^17.0.2",

@@ -1,33 +1,23 @@
 import { useCallback, useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router";
+import { IProduct } from "src/interfaces/product.interface";
+import { handleTry } from "src/utils/handle-try";
 import Button from "src/components/bootstrap/Button";
 import Card from "src/components/bootstrap/Card";
 import Field from "src/components/Field";
-import { IProduct } from "src/interfaces/product.interface";
-import { handleTry } from "src/utils/handle-try";
 import api from "../../api";
-import { IPage } from "../../interfaces/page.interface";
 
 function Product() {
-  const [page, setPage] = useState<IPage | null>(null);
   const [products, setProducts] = useState<IProduct[]>([]);
+  const { categoryId } = useParams<{ categoryId?: string }>();
+  const history = useHistory();
 
   useEffect(() => {
-    (async () => {
-      const [page] = await handleTry(api.get<IPage>("/pages/3"));
-      if (page) {
-        setPage(page.data);
-      }
-      await handleProducts();
-    })();
-  }, []);
+    handleProducts(categoryId);
+  }, [categoryId]);
 
-  const onChange = useCallback(
-    async (category: string) => handleProducts(category),
-    []
-  );
-
-  const handleProducts = async (category?: string) => {
-    const url = category ? `/products/category/${category}` : `/products`;
+  const handleProducts = async (categoryId?: string) => {
+    let url = categoryId ? `/products/category/${categoryId}` : `/products`;
 
     const [products] = await handleTry(api.get<IProduct[]>(url));
     if (products) {
@@ -35,13 +25,27 @@ function Product() {
     }
   };
 
+  const onChange = useCallback(
+    (category: string) => {
+      if (category) {
+        history.push(`/product/${category}`);
+      } else {
+        history.push(`/product`);
+      }
+    },
+    [history]
+  );
+
   return (
     <main className="container">
-      <div className="d-flex justify-content-between">
-        <div dangerouslySetInnerHTML={{ __html: page?.content || "" }}></div>
-        <div className="pt-3">
-          <Field.Select onChange={(event) => onChange(event.target.value)}>
-            <Field.Select.Option value="">todos</Field.Select.Option>
+      <div className="py-3 d-flex justify-content-between">
+        <h3>Produtos</h3>
+        <div>
+          <Field.Select
+            value={categoryId}
+            onChange={(event) => onChange(event.target.value)}
+          >
+            <Field.Select.Option value="">Todos</Field.Select.Option>
             <Field.Select.Option value="1">Teletronio</Field.Select.Option>
             <Field.Select.Option value="2">Saude</Field.Select.Option>
             <Field.Select.Option value="3">Limpeza</Field.Select.Option>

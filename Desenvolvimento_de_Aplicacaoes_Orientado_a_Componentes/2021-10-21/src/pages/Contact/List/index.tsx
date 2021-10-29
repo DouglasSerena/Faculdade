@@ -3,7 +3,7 @@ import api from "src/api";
 import { IContact } from "src/interfaces/contact.interface";
 import { handleTry } from "src/utils/handle-try";
 
-function ContactList() {
+function List() {
   const [contacts, setContacts] = useState<IContact[]>([]);
 
   useEffect(() => {
@@ -17,7 +17,10 @@ function ContactList() {
 
   return (
     <main className="container">
-      <table className="table">
+      <div className="py-3">
+        <h3>Listagem de contatos</h3>
+      </div>
+      <table className="table table-striped table-hover table-responsive">
         <thead>
           <tr>
             <th>Codigo</th>
@@ -28,8 +31,8 @@ function ContactList() {
           </tr>
         </thead>
         <tbody>
-          {contacts.map((contact) => (
-            <tr>
+          {contacts.map((contact, index) => (
+            <tr key={index}>
               <td>{contact.idContact}</td>
               <td>{contact.name}</td>
               <td>{contact.email}</td>
@@ -43,4 +46,4 @@ function ContactList() {
   );
 }
 
-export default ContactList;
+export default List;

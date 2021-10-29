@@ -1281,10 +1281,23 @@
     "@douglas-serena/utils" "^1.4.11"
     rxjs "^7.3.1"
 
-"@douglas-serena/utils@^1.4.11", "@douglas-serena/utils@^1.4.13":
+"@douglas-serena/utils@^1.4.11":
   version "1.4.13"
   resolved "https://registry.yarnpkg.com/@douglas-serena/utils/-/utils-1.4.13.tgz#ccf5194053557868e315d510292f642bc20fb18e"
   integrity sha512-8lNwuG0+7CJUeCw3B5WHu9IinkwGQnEl5qPYMleGXuNeS3fBPyGEdk5DBtzMGArjU1+xQmYj+Vv9GIZoGKy8Ww==
+  dependencies:
+    "@babel/runtime-corejs2" "^7.15.4"
+    dayjs "^1.10.4"
+    imask "^6.1.0"
+    inputmask "^5.0.6"
+    rxjs "^6.6.7"
+    simple-mask-money "^3.0.1"
+    vanilla-masker "^1.2.0"
+
+"@douglas-serena/utils@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@douglas-serena/utils/-/utils-1.5.4.tgz#b4773ad3d7054eef4a2c29e359bcca220beb1c46"
+  integrity sha512-J0WaXlPmNS0RZn4DngTg2VTxsVyayZVFFynH6T6bSlGfGG0vjhL8bNmHBPymKqCKi+HZddgwrkuDR5sQR47MaQ==
   dependencies:
     "@babel/runtime-corejs2" "^7.15.4"
     dayjs "^1.10.4"
