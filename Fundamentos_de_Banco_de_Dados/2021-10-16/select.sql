@@ -36,7 +36,8 @@ SELECT pacientes.nome, consultas.data
 -- 11 🆗 Listar todos os nomes e telefones dos pacientes das 
 -- consultas marcadas para o dia ’07/12/2020’
 -- SEM JOIN
-SELECT pacientes.nome, pacientes.telefone, consultas.data 
+
+SELECT pacientes.nome, pacientes.telefone, consultas.data
   FROM pacientes, consultas,
     WHERE consultas.paciente_id = pacientes.id AND consultas.data = '2021-12-07';
 -- COM JOIN
@@ -77,3 +78,13 @@ SELECT medicos.nome AS medico_nome, pacientes.nome AS paciente_nome, consultas.`
       ON consultas.medico_id = medicos.id
     INNER JOIN pacientes
       ON consultas.paciente_id = pacientes.id;
+
+SELECT medicamentos.id, medicamentos.nome AS medicamento, medicos.nome AS medico
+  FROM medicos
+    INNER JOIN consultas
+      ON medicos.id = consultas.medico_id
+    INNER JOIN prescricao
+      ON consultas.id = prescricao.consulta_id
+    INNER JOIN medicamentos
+      ON prescricao.medicamento_id = medicamentos.id
+WHERE medicos.id = 3999 AND consulta.data >= "2021-10-01" AND consulta.data <= "2021-10-31";

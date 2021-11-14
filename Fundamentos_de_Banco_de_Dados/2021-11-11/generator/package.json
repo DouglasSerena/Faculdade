@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "devDependencies": {
+    "@types/faker": "^5.5.9",
+    "@types/jquery": "^3.5.8"
+  }
+}
