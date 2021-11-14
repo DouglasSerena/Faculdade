@@ -10,7 +10,7 @@ export const Style = {
     align-items: center;
     flex-direction: column;
 
-    & > img {
+    & > svg {
       width: 150px;
       height: 150px;
     }

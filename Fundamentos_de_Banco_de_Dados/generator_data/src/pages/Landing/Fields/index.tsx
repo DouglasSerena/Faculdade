@@ -9,6 +9,7 @@ import Field from "../../../components/Field";
 import { DATATYPE } from "../../../constants/datatype";
 import { Style } from "./style";
 import { MdAdd, MdDelete } from "react-icons/md";
+import NodData from "./NoData";
 
 interface IFieldsProps {
   register: UseFormRegister<FieldValues>;
@@ -36,7 +37,7 @@ const Fields: FC<IFieldsProps> = ({ register, control }) => {
     <Style.Container>
       {fields.length === 0 ? (
         <Style.ContainerEmpty>
-          <img src="/assets/undraw_no_data.svg" alt="no data" />
+          <NodData />
           <h5>Opps!!</h5>
           <p>
             Para conseguir gerar um insert valido você deve adicionar uma coluna
