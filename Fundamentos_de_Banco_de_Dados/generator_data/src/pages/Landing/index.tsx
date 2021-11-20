@@ -1,10 +1,11 @@
 import { Style } from "./style";
 import { useForm } from "react-hook-form";
 import Fields from "./Fields";
-import faker from "faker";
+import faker from "faker/locale/pt_BR";
 import Editor from "@monaco-editor/react";
 import { useState } from "react";
 import { MdDriveFileRenameOutline } from "react-icons/md";
+import dayjs from "dayjs";
 
 export default function Landing() {
   const {
@@ -14,13 +15,13 @@ export default function Landing() {
     formState: { isValid },
   } = useForm({ mode: "all" });
   const [SQL, setSQL] = useState<string>(
-    'INSERT INTO clients ("name") VALUES ("carlos")'
+    `INSERT INTO clients (name) VALUES ('carlos')`
   );
 
   const handleGenerator = () => {
     let { keys, datas } = getValues("fields").reduce(
       (props: any, field: any) => {
-        props.keys.push(`"${field.name}"`);
+        props.keys.push(`${field.name}`);
         props.datas.push({ data: `{{${field.data}}}`, type: field.type });
         return props;
       },
@@ -39,12 +40,16 @@ export default function Landing() {
             if (value === "0") {
               value = "1";
             }
+          } else if (data === "{{datatype.datetime}}") {
+            value = dayjs(faker.datatype.datetime()).format(
+              "YYYY-MM-DD HH:mm:ss"
+            );
           } else {
             value = faker.fake(data);
           }
 
           if (type === "string") {
-            return `"${value.replace('"', "'")}"`;
+            return `'${value.replace("'", "'")}'`;
           }
 
           return value;
