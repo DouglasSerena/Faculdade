@@ -1,8 +1,10 @@
 import { resolve } from "path";
-import { readFileSync, writeFileSync } from "fs";
+import { appendFileSync, readFileSync, rmSync, writeFileSync } from "fs";
+import glob from "glob-promise";
 import faker from "faker";
 import {
   AMOUNT,
+  FILE_DUMP,
   FILE_TABLES,
   FOLDER_RESULT,
   NAME_FILTERS,
@@ -25,7 +27,8 @@ function tableToJson(table: string): {
   fields: { [key: string]: { type: string; command: string } };
 } {
   const tableName =
-    table.match(/(?<=CREATE\sTABLE\s)([\w\d_-]*)/gi)?.[0] || "{{tableName}}";
+    table.match(/(?<=CREATE\sTABLE\sIF\sNOT\s)([\w\d_-]*)/gi)?.[0] ||
+    "{{tableName}}";
   const fields = table
     .match(/(?<=\(\s)([\s\S]*)\s/gi)
     ?.reduce((fields, field) => {
@@ -86,8 +89,13 @@ async function main() {
       resolve(FOLDER_RESULT, `${name}.sql`),
       `${table}\n\nINSERT INTO ${name} (${Object.keys(
         fields
-      )})\n\tVALUES ${values.join(",")}`
+      )})\n\tVALUES ${values.join(",")};\n\n`
     );
+  }
+
+  writeFileSync(FILE_DUMP, "");
+  for (const file of await glob(`${FOLDER_RESULT}/**/*.sql`)) {
+    appendFileSync(FILE_DUMP, readFileSync(file));
   }
 }
 

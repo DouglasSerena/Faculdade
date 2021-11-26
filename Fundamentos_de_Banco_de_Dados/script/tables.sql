@@ -1,22 +1,22 @@
-create table clientes(
+create table if not clientes(
   id serial not null primary key,
   nome varchar(100) --eval($.fullName())
 );
 
-create table produtos(
+create table if not produtos(
   id serial not null primary key,
   descricao varchar(100), --eval($.product())
   valor_unit decimal(12, 2) default 0 --eval($.price())
 );
 
-create table notas(
+create table if not notas(
   id serial not null primary key,
   data_emissao date, --eval($.date())
   id_cliente int not null, --eval($.foreignKey(1000))
   foreign key(id_cliente) references clientes(id) on delete restrict on update cascade
 );
 
-create table notas_itens(
+create table if not notas_itens(
   id serial not null primary key,
   id_nota int not null, --eval($.foreignKey(1000))
   id_produto int not null, --eval($.foreignKey(1000))
