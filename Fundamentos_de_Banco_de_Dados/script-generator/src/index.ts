@@ -1,7 +1,13 @@
 import { resolve } from "path";
-import { appendFileSync, readFileSync, rmSync, writeFileSync } from "fs";
+import {
+  appendFileSync,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "fs";
 import glob from "glob-promise";
-import faker from "faker";
 import {
   AMOUNT,
   FILE_DUMP,
@@ -10,13 +16,13 @@ import {
   NAME_FILTERS,
   TYPES_WITHOUT_ZEST,
 } from "./config";
+import faker from "faker";
 
-faker.commerce.productName();
 function execute(command: string) {
   return eval(`
     const faker = require('faker/locale/pt_BR');
     const dayjs = require('dayjs');
-    const $ = require('./functions')
+    const $ = require('./functions.js')
 
     exports.value = ${command}
   `);
@@ -27,8 +33,7 @@ function tableToJson(table: string): {
   fields: { [key: string]: { type: string; command: string } };
 } {
   const tableName =
-    table.match(/(?<=CREATE\sTABLE\sIF\sNOT\s)([\w\d_-]*)/gi)?.[0] ||
-    "{{tableName}}";
+    table.match(/(?<=CREATE\sTABLE\s)([\w\d_-]*)/gi)?.[0] || "{{tableName}}";
   const fields = table
     .match(/(?<=\(\s)([\s\S]*)\s/gi)
     ?.reduce((fields, field) => {
@@ -39,12 +44,12 @@ function tableToJson(table: string): {
 
       fields.push(
         lines?.reduce((obj, _) => {
-          let name = _.match(/^([\w\d_-]*)/gi)?.[0]
-            .trim()
-            .toLowerCase();
-          let type = _.match(/\s([\w\d_-]*)/gi)?.[0]
-            .trim()
-            .toLowerCase();
+          let name = _.match(/^([\w\d_-]*)/gi)?.[0];
+          name = name.trim().toLowerCase();
+
+          let type = _.match(/\s([\w\d_-]*)/gi)?.[0];
+          type = type.trim().toLowerCase();
+
           let command = _.match(/(?<=--eval\()(.*)/gi)?.[0].trim();
 
           if (name && command && type && !NAME_FILTERS.includes(name)) {
@@ -69,9 +74,14 @@ function tableToJson(table: string): {
 
 async function main() {
   const sql = readFileSync(FILE_TABLES, { encoding: "utf-8" }).toString();
-  const tables = sql.match(/CREATE\sTABLE([.\s\S\r\n]*?)\);/gi);
+  const tables = sql.match(/CREATE\sTABLE([.\s\S\r\n]*?)\);/gi) ?? [];
 
-  for (const table of tables ?? []) {
+  if (existsSync(FOLDER_RESULT)) {
+    rmSync(FOLDER_RESULT, { recursive: true });
+  }
+  mkdirSync(FOLDER_RESULT);
+
+  tables.forEach((table, index) => {
     const { name, fields } = tableToJson(table);
     const values = Array.from({ length: AMOUNT }).map(() => {
       const values: string[] = [];
@@ -86,12 +96,12 @@ async function main() {
     });
 
     writeFileSync(
-      resolve(FOLDER_RESULT, `${name}.sql`),
-      `${table}\n\nINSERT INTO ${name} (${Object.keys(
+      resolve(FOLDER_RESULT, `${index}_${name}.sql`),
+      `INSERT INTO ${name} (${Object.keys(
         fields
       )})\n\tVALUES ${values.join(",")};\n\n`
     );
-  }
+  });
 
   writeFileSync(FILE_DUMP, "");
   for (const file of await glob(`${FOLDER_RESULT}/**/*.sql`)) {

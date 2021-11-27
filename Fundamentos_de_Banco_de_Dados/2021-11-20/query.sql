@@ -1,4 +1,4 @@
--- 3 - FUS que calcule a média de valor unitário dos produtos vendidos num mês de sua escolha.
+-- 1 - FUS que calcule a média de valor unitário dos produtos vendidos num mês de sua escolha.
 SELECT produtos.descricao, AVG(produtos.valor_unit) as valor_media  FROM notas 
 	JOIN notas_itens
     	on notas_itens.id_nota = notas.id
@@ -6,18 +6,23 @@ SELECT produtos.descricao, AVG(produtos.valor_unit) as valor_media  FROM notas
     	on notas_itens.id_produto = produtos.id
 WHERE EXTRACT(MONTH FROM notas.data_emissao) = 12
 GROUP BY produtos.id
-ORDER BY produtos.id DESC;
+ORDER BY valor_media DESC;
 
 -- 2 - FUS que mostre os a quantidade de produtos que foram comprados pelos clientes
 -- cujo o nome começa com Maria. Pode mostrar o nome do produto, o nome da Maria
 -- (similar) e a quantidade comprada. Similar porque podem ter várias Marias.
-SELECT clientes.id, clientes.nome as cliente, produtos.descricao as produto, notas_itens.quantidade as quantidade FROM notas 
-	JOIN notas_itens
-    	on notas_itens.id_nota = notas.id
-    JOIN produtos
-    	on notas_itens.id_produto = produtos.id
-    JOIN clientes
-    	on notas.id_cliente = clientes.id
+SELECT
+	clientes.id,
+    clientes.nome as cliente,
+    produtos.descricao as produto,
+    notas_itens.quantidade as quantidade
+	FROM notas 
+      JOIN notas_itens
+          on notas_itens.id_nota = notas.id
+      JOIN produtos
+          on notas_itens.id_produto = produtos.id
+      JOIN clientes
+          on notas.id_cliente = clientes.id
 WHERE clientes.nome LIKE '%Maria%'
 ORDER by clientes.id ASC;
 

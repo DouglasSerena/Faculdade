@@ -1,0 +1,18 @@
+{
+  "AMOUNT": 1000,
+  "FOLDER_RESULT": "sql",
+  "FILE_DUMP": "dump.sql",
+  "FILE_TABLES": "tables.sql",
+  "NAME_FILTERS": ["foreign"],
+  "TYPES_WITHOUT_ZEST": [
+    "SERIAL",
+    "BINARY",
+    "INT",
+    "INTEGER",
+    "DOUBLE",
+    "DECIMAL",
+    "FLOAT",
+    "BOOL",
+    "BOOLEAN"
+  ]
+}

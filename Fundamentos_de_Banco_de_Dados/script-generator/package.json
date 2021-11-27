@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/index.ts",
-    "build": "tsc -p tsconfig.json"
+    "gen": "ts-node src/index.ts"
   },
   "dependencies": {
     "dayjs": "^1.10.7",
