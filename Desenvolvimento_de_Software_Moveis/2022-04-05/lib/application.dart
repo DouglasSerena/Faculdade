@@ -1,4 +1,4 @@
-import 'package:faculdade/modules/home/home.dart';
+import 'package:faculdade/modules/modules.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
