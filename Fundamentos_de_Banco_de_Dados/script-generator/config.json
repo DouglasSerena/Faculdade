@@ -3,8 +3,9 @@
   "FOLDER_RESULT": "sql",
   "FILE_DUMP": "dump.sql",
   "FILE_TABLES": "tables.sql",
-  "NAME_FILTERS": ["foreign"],
+  "NAME_FILTERS": ["foreign", "constraint"],
   "TYPES_WITHOUT_ZEST": [
+    "ID",
     "SERIAL",
     "BINARY",
     "INT",

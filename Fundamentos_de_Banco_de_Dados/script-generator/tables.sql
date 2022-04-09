@@ -1,28 +1,67 @@
-create table usuarios (
-  id serial not null primary key,
-  nome VARCHAR(100) NOT NULL, --eval($.fullName())
-  create_at TIMESTAMP DEFAULT NOW(), --eval($.date('2018-01-01', '2020-01-01'))
-  update_at TIMESTAMP --eval($.date('2020-01-01', '2022-12-31'))
+CREATE TABLE cidades (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(150) NOT NULL,  --eval(faker.address.cityName())
+  uf CHAR(2) NOT NULL --eval(faker.address.stateAbbr())
 );
 
-create table servicos (
-  id serial not null primary key,
-  descricao VARCHAR(100) NOT NULL, --eval($.fullName())
-  valor FLOAT NOT NULL, --eval($.price(0.1, 5000))
-  id_user int NOT NULL, --eval($.foreignKey(1000))
-  foreign key(id_user) references usuarios(id) on delete restrict on update cascade
+CREATE TABLE categorias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome TEXT NOT NULL, --eval(faker.commerce.department())
+  descricao TEXT NOT NULL --eval(faker.lorem.paragraph())
 );
 
-create table notas (
-  id serial not null primary key,
-  data_emissao date --eval($.date('2018-01-01', '2022-12-31'))
+
+CREATE TABLE clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(150) NOT NULL, --eval($.fullName())
+  endereco VARCHAR(150) NOT NULL, --eval(faker.address.streetAddress())
+  cidade_id INT, --eval($.foreignKey(1000))
+  CONSTRAINT clientes_cidades
+    FOREIGN KEY (cidade_id)
+      REFERENCES cidades(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
 );
 
-create table notas_servicos (
-  id serial not null primary key,
-  valor FLOAT NOT NULL, --eval($.price(0.1, 5000))
-  id_nota int NOT NULL, --eval($.foreignKey(1000))
-  id_servico int NOT NULL, --eval($.foreignKey(1000))
-  foreign key(id_nota) references notas(id) on delete restrict on update cascade,
-  foreign key(id_servico) references servicos(id) on delete restrict on update cascade
+CREATE TABLE autores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(150) NOT NULL, --eval($.fullName())
+  cidade_id INT, --eval($.foreignKey(1000))
+  CONSTRAINT clientes_cidades
+    FOREIGN KEY (cidade_id)
+      REFERENCES cidades(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE livros (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(150) NOT NULL, --eval($.fullName())
+  numero_folhas INT NOT NULL, --eval($.amount(20, 2000))
+  editora VARCHAR(150) NOT NULL, --eval($.fullName())
+  valor FLOAT NOT NULL, --eval($.price())
+  autor_id INT NOT NULL, --eval($.foreignKey(1000))
+  categoria_id INT NOT NULL, --eval($.foreignKey(1000))
+  CONSTRAINT livros_categorias
+    FOREIGN KEY (categoria_id)
+      REFERENCES categorias(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE vendas (
+  livro_id INT NOT NULL, --eval($.foreignKey(1000))
+  cliente_id INT NOT NULL, --eval($.foreignKey(1000))
+  quantidade INT NOT NULL, --eval($.amount())
+  data DATETIME DEFAULT NOW(),
+  CONSTRAINT vendas_produtos
+    FOREIGN KEY (cliente_id)
+      REFERENCES clientes(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+  CONSTRAINT vendas_filiais
+    FOREIGN KEY (livro_id)
+      REFERENCES livros(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE
 );

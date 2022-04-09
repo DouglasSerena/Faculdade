@@ -89,7 +89,7 @@ async function main() {
         if (TYPES_WITHOUT_ZEST.includes(field.type.toUpperCase())) {
           values.push(`${execute(field.command)}`);
         } else {
-          values.push(`'${`${execute(field.command)}`.replace("'", "")}'`);
+          values.push(`'${`${execute(field.command)}`.replace(/['"]/g, "")}'`);
         }
       }
       return `(${values.join(",")})`;
@@ -97,9 +97,9 @@ async function main() {
 
     writeFileSync(
       resolve(FOLDER_RESULT, `${index}_${name}.sql`),
-      `INSERT INTO ${name} (${Object.keys(
-        fields
-      )})\n\tVALUES ${values.join(",")};\n\n`
+      `INSERT INTO ${name} (${Object.keys(fields)})\n\tVALUES ${values.join(
+        ","
+      )};\n\n`
     );
   });
 
