@@ -1,5 +1,11 @@
 # faculdade
 
+<div style="display: flex; gap: 5px">
+    <img src="./assets/.github/home-up.png" width="50%" />
+    <img src="./assets/.github/home-down.png" width="50%" />
+</div>
+
+
 A new Flutter project.
 
 ## Getting Started
