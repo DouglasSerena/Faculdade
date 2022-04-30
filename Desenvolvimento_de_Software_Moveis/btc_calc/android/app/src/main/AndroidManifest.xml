@@ -3,7 +3,7 @@
    <application
         android:label="btc_calc"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/ic_account_balance_wallet">
         <activity
             android:name=".MainActivity"
             android:exported="true"

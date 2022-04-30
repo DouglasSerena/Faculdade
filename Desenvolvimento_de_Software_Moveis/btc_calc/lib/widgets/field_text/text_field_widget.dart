@@ -1,33 +1,33 @@
-import 'package:btc_calc/widgets/field_text/validators/field_text_validator.dart';
+import 'package:btc_calc/widgets/field_text/validators/text_field_validator.dart';
 import 'package:flutter/material.dart';
 
-class FieldTextWidget extends StatelessWidget {
+class TextFieldWidget extends StatelessWidget {
   Widget? label;
-  late String initialValue;
+  Widget? prefix;
+  Widget? suffix;
+  bool readOnly;
   TextInputType? keyboardType;
   InputDecoration? decoration;
   void Function(String)? onChanged;
-  List<FieldTextValidate>? validators;
-  late TextEditingController controller;
+  List<TextFieldValidate>? validators;
+  TextEditingController controller;
 
-  FieldTextWidget({
+  TextFieldWidget({
     Key? key,
     this.label,
+    this.prefix,
+    this.suffix,
     this.onChanged,
     this.validators,
     this.decoration,
     this.keyboardType,
-    this.initialValue = "",
-    TextEditingController? controller,
-  }) : super(key: key) {
-    this.controller = controller ?? TextEditingController();
-
-    this.controller.text = initialValue;
-  }
+    this.readOnly = false,
+    required this.controller,
+  }) : super(key: key);
 
   String? onValidator(String? text) {
     if (validators != null) {
-      for (FieldTextValidate validator in validators!) {
+      for (TextFieldValidate validator in validators!) {
         if (validator.validator(text)) {
           return validator.message;
         }
@@ -40,12 +40,15 @@ class FieldTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: readOnly,
       onChanged: onChanged,
       validator: onValidator,
       controller: controller,
       keyboardType: keyboardType,
       decoration: InputDecoration(
         label: label,
+        prefix: prefix,
+        suffix: suffix,
       ),
     );
   }
