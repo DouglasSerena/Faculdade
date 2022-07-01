@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+    server:
+        image: nginx:1.21
+        container_name: server-nginx
+        volumes:
+            - ./www:/usr/share/nginx/html
+        ports:
+            - 8080:80

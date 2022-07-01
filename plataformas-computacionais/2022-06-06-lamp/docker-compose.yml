@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+    server:
+        build: .
+        container_name: server-php
+        volumes:
+            - ./www:/var/www/html
+        ports:
+            - 8080:80
+        networks:
+            - default
+
+    database:
+        image: mysql:8.0
+        container_name: database-mysql
+        volumes:
+            - ./database/data:/var/lib/mysql
+            - ./database/logs:/var/log/mysql
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+        networks:
+            - default
+
+    admin:
+        image: phpmyadmin/phpmyadmin
+        container_name: admin-phpmyadmin
+        ports:
+            - 8081:80
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+        networks:
+            - default
+
+networks:
+    default:
+        driver: bridge
