@@ -7,3 +7,6 @@
 [submodule "Event_Finder"]
 	path = Event_Finder
 	url = git@github.com:DouglasSerena/Event_Finder.git
+[submodule "desenvolvimento-de-software-moveis/scanner_flutter"]
+	path = desenvolvimento-de-software-moveis/scanner_flutter
+	url = git@github.com:DouglasSerena/scanner_flutter.git
